@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <filter id="dot-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Arrow 1: Formulaire → Google Sheets -->
+  <g id="arrow-1" opacity="0">
+    <path class="arrow-path" d="M 122,152 C 142,150 158,151 178,150" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+    <path d="M 175,146 L 183,150 L 175,154 Z" fill="#333"/>
+  </g>
+
+  <!-- Arrow 2: Google Sheets → Email -->
+  <g id="arrow-2" opacity="0">
+    <path class="arrow-path" d="M 282,151 C 302,149 318,150 338,150" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+    <path d="M 335,146 L 343,150 L 335,154 Z" fill="#333"/>
+  </g>
+
+  <!-- Arrow 3a: Email → WhatsApp -->
+  <g id="arrow-3a" opacity="0">
+    <path class="arrow-path" d="M 442,140 C 470,125 500,108 528,94" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+    <path d="M 524,90 L 533,91 L 527,99 Z" fill="#333"/>
+  </g>
+
+  <!-- Arrow 3b: Email → Telegram -->
+  <g id="arrow-3b" opacity="0">
+    <path class="arrow-path" d="M 442,162 C 470,175 500,193 528,207" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+    <path d="M 524,211 L 533,209 L 527,201 Z" fill="#333"/>
+  </g>
+
+  <!-- Node: Formulaire -->
+  <g id="node-form" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <!-- Hand-drawn rectangle -->
+    <path d="M 22,119 C 24,117 68,117 70,118 C 115,117 118,119 119,121 C 120,145 119,175 118,179 C 116,181 70,182 68,181 C 22,182 20,180 20,178 C 19,155 20,122 22,119 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Form icon: 3 horizontal lines -->
+    <line x1="38" y1="138" x2="102" y2="138" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="38" y1="146" x2="102" y2="146" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="38" y1="154" x2="82" y2="154" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Label -->
+    <text x="70" y="173" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Formulaire</text>
+  </g>
+
+  <!-- Node: Google Sheets -->
+  <g id="node-sheets" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <!-- Hand-drawn rectangle -->
+    <path d="M 182,119 C 184,117 227,117 230,118 C 276,117 279,119 280,121 C 281,145 280,175 279,179 C 277,181 230,182 228,181 C 182,182 180,180 180,178 C 179,155 180,122 182,119 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Google Sheets logo -->
+    <image href="/illustrations/logos/google-sheets.svg" x="216" y="127" width="28" height="28"/>
+    <!-- Label -->
+    <text x="230" y="173" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Google Sheets</text>
+  </g>
+
+  <!-- Node: Email -->
+  <g id="node-email" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <!-- Hand-drawn rectangle -->
+    <path d="M 342,119 C 344,117 387,117 390,118 C 436,117 439,119 440,121 C 441,145 440,175 439,179 C 437,181 390,182 388,181 C 342,182 340,180 340,178 C 339,155 340,122 342,119 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Gmail logo -->
+    <image href="/illustrations/logos/gmail.svg" x="376" y="127" width="28" height="28"/>
+    <!-- Label -->
+    <text x="390" y="173" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Email</text>
+  </g>
+
+  <!-- Node: WhatsApp -->
+  <g id="node-whatsapp" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <!-- Hand-drawn rectangle -->
+    <path d="M 533,59 C 535,57 566,57 568,58 C 624,57 627,59 628,61 C 629,75 628,115 627,119 C 625,121 568,122 566,121 C 533,122 531,120 531,118 C 530,95 531,62 533,59 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- WhatsApp logo -->
+    <image href="/illustrations/logos/whatsapp.svg" x="566" y="64" width="28" height="28"/>
+    <!-- Label -->
+    <text x="580" y="110" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">WhatsApp</text>
+  </g>
+
+  <!-- Node: Telegram -->
+  <g id="node-telegram" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <!-- Hand-drawn rectangle -->
+    <path d="M 533,179 C 535,177 566,177 568,178 C 624,177 627,179 628,181 C 629,195 628,235 627,239 C 625,241 568,242 566,241 C 533,242 531,240 531,238 C 530,215 531,182 533,179 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Telegram logo -->
+    <image href="/illustrations/logos/telegram.svg" x="566" y="184" width="28" height="28"/>
+    <!-- Label -->
+    <text x="580" y="230" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Telegram</text>
+  </g>
+
+  <!-- Animated dots -->
+  <circle id="dot-pulse" r="4" fill="#fa5d19" opacity="0" filter="url(#dot-glow)"/>
+  <circle id="dot-pulse-b" r="4" fill="#fa5d19" opacity="0" filter="url(#dot-glow)"/>
+</svg>
