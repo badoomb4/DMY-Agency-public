@@ -35,9 +35,9 @@
   <circle id="milestone-1" cx="80" cy="90" r="8" fill="#fa5d19" stroke="#fa5d19" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"/>
 
   <g id="step-1" opacity="0" style="transform: translateY(8px);">
-    <text x="80" y="116" font-family="Virgil, Segoe Print, cursive" font-size="16" fill="#262626" text-anchor="middle">Decouverte</text>
-    <text x="80" y="131" font-family="Virgil, Segoe Print, cursive" font-size="10" fill="#737373" text-anchor="middle">Analyse de votre contexte,</text>
-    <text x="80" y="143" font-family="Virgil, Segoe Print, cursive" font-size="10" fill="#737373" text-anchor="middle">contraintes et objectifs.</text>
+    <text x="80" y="116" font-family="'Geist', system-ui, sans-serif" font-size="16" fill="#262626" text-anchor="middle">Decouverte</text>
+    <text x="80" y="131" font-family="'Geist', system-ui, sans-serif" font-size="10" fill="#737373" text-anchor="middle">Analyse de votre contexte,</text>
+    <text x="80" y="143" font-family="'Geist', system-ui, sans-serif" font-size="10" fill="#737373" text-anchor="middle">contraintes et objectifs.</text>
   </g>
 
   <!-- ========== MILESTONE 2 — x=327 ========== -->
@@ -59,9 +59,9 @@
   <circle id="milestone-2" cx="327" cy="90" r="8" fill="#fa5d19" stroke="#fa5d19" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"/>
 
   <g id="step-2" opacity="0" style="transform: translateY(8px);">
-    <text x="327" y="116" font-family="Virgil, Segoe Print, cursive" font-size="16" fill="#262626" text-anchor="middle">Strategie</text>
-    <text x="327" y="131" font-family="Virgil, Segoe Print, cursive" font-size="10" fill="#737373" text-anchor="middle">Architecture, technologies</text>
-    <text x="327" y="143" font-family="Virgil, Segoe Print, cursive" font-size="10" fill="#737373" text-anchor="middle">et planning de livraison.</text>
+    <text x="327" y="116" font-family="'Geist', system-ui, sans-serif" font-size="16" fill="#262626" text-anchor="middle">Strategie</text>
+    <text x="327" y="131" font-family="'Geist', system-ui, sans-serif" font-size="10" fill="#737373" text-anchor="middle">Architecture, technologies</text>
+    <text x="327" y="143" font-family="'Geist', system-ui, sans-serif" font-size="10" fill="#737373" text-anchor="middle">et planning de livraison.</text>
   </g>
 
   <!-- ========== MILESTONE 3 — x=573 ========== -->
@@ -73,9 +73,9 @@
   <circle id="milestone-3" cx="573" cy="90" r="8" fill="#fa5d19" stroke="#fa5d19" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"/>
 
   <g id="step-3" opacity="0" style="transform: translateY(8px);">
-    <text x="573" y="116" font-family="Virgil, Segoe Print, cursive" font-size="16" fill="#262626" text-anchor="middle">Execution</text>
-    <text x="573" y="131" font-family="Virgil, Segoe Print, cursive" font-size="10" fill="#737373" text-anchor="middle">Developpement iteratif</text>
-    <text x="573" y="143" font-family="Virgil, Segoe Print, cursive" font-size="10" fill="#737373" text-anchor="middle">avec demos regulieres.</text>
+    <text x="573" y="116" font-family="'Geist', system-ui, sans-serif" font-size="16" fill="#262626" text-anchor="middle">Execution</text>
+    <text x="573" y="131" font-family="'Geist', system-ui, sans-serif" font-size="10" fill="#737373" text-anchor="middle">Developpement iteratif</text>
+    <text x="573" y="143" font-family="'Geist', system-ui, sans-serif" font-size="10" fill="#737373" text-anchor="middle">avec demos regulieres.</text>
   </g>
 
   <!-- ========== MILESTONE 4 — x=820 ========== -->
@@ -95,9 +95,9 @@
   <circle id="milestone-4" cx="820" cy="90" r="8" fill="#fa5d19" stroke="#fa5d19" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"/>
 
   <g id="step-4" opacity="0" style="transform: translateY(8px);">
-    <text x="820" y="116" font-family="Virgil, Segoe Print, cursive" font-size="16" fill="#262626" text-anchor="middle">Livraison</text>
-    <text x="820" y="131" font-family="Virgil, Segoe Print, cursive" font-size="10" fill="#737373" text-anchor="middle">Deploiement, formation</text>
-    <text x="820" y="143" font-family="Virgil, Segoe Print, cursive" font-size="10" fill="#737373" text-anchor="middle">et support continu.</text>
+    <text x="820" y="116" font-family="'Geist', system-ui, sans-serif" font-size="16" fill="#262626" text-anchor="middle">Livraison</text>
+    <text x="820" y="131" font-family="'Geist', system-ui, sans-serif" font-size="10" fill="#737373" text-anchor="middle">Deploiement, formation</text>
+    <text x="820" y="143" font-family="'Geist', system-ui, sans-serif" font-size="10" fill="#737373" text-anchor="middle">et support continu.</text>
   </g>
 
   <!-- Travelling pulse dot -->

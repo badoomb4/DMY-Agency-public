@@ -118,8 +118,8 @@
       <circle cx="17" cy="6" r="3.5" fill="#fff" stroke="#333" stroke-width="1.3"/>
       <path d="M 11 20 Q 11 13 17 13 Q 23 13 23 20" fill="#fff" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
     </g>
-    <text x="106" y="57" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Visiteurs</text>
-    <text x="338" y="57" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">100%</text>
+    <text x="106" y="57" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Visiteurs</text>
+    <text x="338" y="57" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">100%</text>
   </g>
 
   <!-- Level 2 — Landing y≈125 -->
@@ -134,8 +134,8 @@
       <line x1="4" y1="5" x2="18" y2="5" stroke="#333" stroke-width="0.8" stroke-linecap="round"/>
       <line x1="4" y1="9" x2="14" y2="9" stroke="#333" stroke-width="0.8" stroke-linecap="round"/>
     </g>
-    <text x="116" y="127" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Landing</text>
-    <text x="338" y="127" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">60%</text>
+    <text x="116" y="127" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Landing</text>
+    <text x="338" y="127" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">60%</text>
   </g>
 
   <!-- Level 3 — Produit y≈195 -->
@@ -149,8 +149,8 @@
       <!-- Tape line -->
       <line x1="11" y1="0" x2="11" y2="22" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 1"/>
     </g>
-    <text x="124" y="197" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Produit</text>
-    <text x="338" y="197" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">35%</text>
+    <text x="124" y="197" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Produit</text>
+    <text x="338" y="197" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">35%</text>
   </g>
 
   <!-- Level 4 — Panier y≈265 -->
@@ -163,8 +163,8 @@
       <circle cx="10" cy="19" r="2" fill="none" stroke="#333" stroke-width="1.3"/>
       <circle cx="18" cy="19" r="2" fill="none" stroke="#333" stroke-width="1.3"/>
     </g>
-    <text x="134" y="267" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Panier</text>
-    <text x="338" y="267" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">20%</text>
+    <text x="134" y="267" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Panier</text>
+    <text x="338" y="267" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">20%</text>
   </g>
 
   <!-- Level 5 — Achat y≈335 -->
@@ -181,7 +181,7 @@
       <circle cx="17" cy="13" r="1" fill="#333" fill-opacity="0.4"/>
       <circle cx="20" cy="13" r="1" fill="#333" fill-opacity="0.4"/>
     </g>
-    <text x="150" y="337" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Achat</text>
-    <text x="338" y="337" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">8%</text>
+    <text x="150" y="337" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Achat</text>
+    <text x="338" y="337" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">8%</text>
   </g>
 </svg>

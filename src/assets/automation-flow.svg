@@ -42,7 +42,7 @@
     <line x1="38" y1="146" x2="102" y2="146" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
     <line x1="38" y1="154" x2="82" y2="154" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
     <!-- Label -->
-    <text x="70" y="173" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Formulaire</text>
+    <text x="70" y="173" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Formulaire</text>
   </g>
 
   <!-- Node: Google Sheets -->
@@ -52,7 +52,7 @@
     <!-- Google Sheets logo -->
     <image href="/illustrations/logos/google-sheets.svg" x="216" y="127" width="28" height="28"/>
     <!-- Label -->
-    <text x="230" y="173" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Google Sheets</text>
+    <text x="230" y="173" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Google Sheets</text>
   </g>
 
   <!-- Node: Email -->
@@ -62,7 +62,7 @@
     <!-- Gmail logo -->
     <image href="/illustrations/logos/gmail.svg" x="376" y="127" width="28" height="28"/>
     <!-- Label -->
-    <text x="390" y="173" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Email</text>
+    <text x="390" y="173" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Email</text>
   </g>
 
   <!-- Node: WhatsApp -->
@@ -72,7 +72,7 @@
     <!-- WhatsApp logo -->
     <image href="/illustrations/logos/whatsapp.svg" x="566" y="64" width="28" height="28"/>
     <!-- Label -->
-    <text x="580" y="110" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">WhatsApp</text>
+    <text x="580" y="110" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">WhatsApp</text>
   </g>
 
   <!-- Node: Telegram -->
@@ -82,7 +82,7 @@
     <!-- Telegram logo -->
     <image href="/illustrations/logos/telegram.svg" x="566" y="184" width="28" height="28"/>
     <!-- Label -->
-    <text x="580" y="230" text-anchor="middle" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Telegram</text>
+    <text x="580" y="230" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Telegram</text>
   </g>
 
   <!-- Animated dots -->
