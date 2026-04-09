@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <filter id="dot-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ===== TRUNK PATHS ===== -->
+  <path
+    id="trunk-1"
+    d="M 201 63 C 200 80, 199 95, 200 108"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+  <path
+    id="trunk-2"
+    d="M 200 153 C 201 168, 199 183, 200 198"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+
+  <!-- ===== BRANCH PATHS ===== -->
+  <path
+    id="branch-ios"
+    d="M 170 243 C 155 260, 130 280, 100 310"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+  <path
+    id="branch-android"
+    d="M 230 243 C 245 260, 270 280, 300 310"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+
+  <!-- ===== NODE: IDEA ===== -->
+  <g
+    id="node-idea"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <rect
+      x="160" y="17"
+      width="80" height="45"
+      rx="7" ry="7"
+      fill="white"
+      stroke="#333"
+      stroke-width="1.5"
+      stroke-linejoin="round"
+      style="paint-order: stroke"
+    />
+    <!-- lightbulb sketch icon -->
+    <g transform="translate(171, 29)">
+      <circle cx="5" cy="5" r="4" fill="none" stroke="#333" stroke-width="1.2"/>
+      <line x1="5" y1="9.5" x2="5" y2="11.5" stroke="#333" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="3.5" y1="10.5" x2="6.5" y2="10.5" stroke="#333" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="1" y1="5" x2="0" y2="5" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+      <line x1="9" y1="5" x2="10" y2="5" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+      <line x1="5" y1="0" x2="5" y2="-1" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+    </g>
+    <text
+      x="200" y="44"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="14"
+      fill="#333"
+    >Idée</text>
+  </g>
+
+  <!-- ===== NODE: DESIGN ===== -->
+  <g
+    id="node-design"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <rect
+      x="160" y="108"
+      width="80" height="45"
+      rx="7" ry="7"
+      fill="white"
+      stroke="#333"
+      stroke-width="1.5"
+      stroke-linejoin="round"
+    />
+    <!-- paintbrush sketch icon -->
+    <g transform="translate(170, 118)">
+      <line x1="2" y1="12" x2="8" y2="4" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
+      <circle cx="9" cy="3" r="2" fill="none" stroke="#333" stroke-width="1.2"/>
+      <path d="M 1 13 Q 0 15 2 14" fill="#333" stroke="none"/>
+    </g>
+    <text
+      x="200" y="134"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="14"
+      fill="#333"
+    >Design</text>
+  </g>
+
+  <!-- ===== NODE: CODEBASE ===== -->
+  <g
+    id="node-codebase"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <rect
+      x="150" y="198"
+      width="100" height="50"
+      rx="7" ry="7"
+      fill="white"
+      stroke="#fa5d19"
+      stroke-width="2"
+      stroke-linejoin="round"
+    />
+    <!-- code brackets icon </> -->
+    <text
+      x="178" y="229"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="12"
+      fill="#fa5d19"
+    >&lt;/&gt;</text>
+    <text
+      x="210" y="229"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="14"
+      fill="#333"
+    >Codebase</text>
+  </g>
+
+  <!-- ===== NODE: iOS ===== -->
+  <g
+    id="node-ios"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <rect
+      x="62" y="288"
+      width="76" height="44"
+      rx="7" ry="7"
+      fill="white"
+      stroke="#333"
+      stroke-width="1.5"
+    />
+    <image href="/illustrations/logos/apple.svg" x="68" y="293" width="20" height="20"/>
+    <text
+      x="100" y="323"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="13"
+      fill="#333"
+    >iOS</text>
+  </g>
+
+  <!-- ===== NODE: Android ===== -->
+  <g
+    id="node-android"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <rect
+      x="262" y="288"
+      width="76" height="44"
+      rx="7" ry="7"
+      fill="white"
+      stroke="#333"
+      stroke-width="1.5"
+    />
+    <image href="/illustrations/android-svgrepo-com.svg" x="268" y="293" width="20" height="20"/>
+    <text
+      x="300" y="323"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="13"
+      fill="#333"
+    >Android</text>
+  </g>
+
+  <!-- ===== LEAVES: iOS ===== -->
+  <g
+    id="leaf-ios-1"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <circle cx="72" cy="350" r="4" fill="#fa5d19"/>
+    <text
+      x="72" y="362"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="8"
+      fill="#333"
+    >Push</text>
+  </g>
+  <g
+    id="leaf-ios-2"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <circle cx="100" cy="350" r="4" fill="#fa5d19"/>
+    <text
+      x="100" y="362"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="8"
+      fill="#333"
+    >Offline</text>
+  </g>
+  <g
+    id="leaf-ios-3"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <circle cx="128" cy="350" r="4" fill="#fa5d19"/>
+    <text
+      x="128" y="362"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="8"
+      fill="#333"
+    >Perf</text>
+  </g>
+
+  <!-- ===== LEAVES: Android ===== -->
+  <g
+    id="leaf-android-1"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <circle cx="272" cy="350" r="4" fill="#fa5d19"/>
+    <text
+      x="272" y="362"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="8"
+      fill="#333"
+    >Push</text>
+  </g>
+  <g
+    id="leaf-android-2"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <circle cx="300" cy="350" r="4" fill="#fa5d19"/>
+    <text
+      x="300" y="362"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="8"
+      fill="#333"
+    >Offline</text>
+  </g>
+  <g
+    id="leaf-android-3"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  >
+    <circle cx="328" cy="350" r="4" fill="#fa5d19"/>
+    <text
+      x="328" y="362"
+      text-anchor="middle"
+      font-family="Virgil, Segoe Print, cursive"
+      font-size="8"
+      fill="#333"
+    >Perf</text>
+  </g>
+
+  <!-- ===== DOT PULSE ===== -->
+  <circle id="dot-pulse" r="4" fill="#fa5d19" opacity="0" filter="url(#dot-glow)"/>
+
+</svg>
