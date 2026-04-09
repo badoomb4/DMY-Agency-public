@@ -10,71 +10,71 @@
   </defs>
 
   <!-- TRUNK PATHS -->
-  <path id="trunk-1" d="M 200 65 C 201 78, 199 92, 200 108" stroke="#333" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-  <path id="trunk-2" d="M 200 160 C 201 175, 199 190, 200 205" stroke="#333" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="trunk-1" d="M 200 65 L 200 108" stroke="#ededed" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="trunk-2" d="M 200 158 L 200 205" stroke="#ededed" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
 
   <!-- BRANCH PATHS -->
-  <path id="branch-ios" d="M 168 250 C 150 270, 125 290, 100 315" stroke="#333" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-  <path id="branch-android" d="M 232 250 C 250 270, 275 290, 300 315" stroke="#333" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="branch-ios" d="M 170 250 L 100 315" stroke="#ededed" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="branch-android" d="M 230 250 L 300 315" stroke="#ededed" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
 
-  <!-- NODE: IDEA -->
+  <!-- NODE: Idee -->
   <g id="node-idea" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 157,18 C 159,16 195,16 200,17 C 238,16 242,18 243,20 C 244,35 243,55 242,58 C 240,60 204,61 200,60 C 160,61 158,59 157,57 C 156,42 157,21 157,18 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="200" y="44" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="14" font-weight="500" fill="#333">Idee</text>
+    <rect x="158" y="20" width="84" height="44" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <text x="200" y="47" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" font-weight="500" fill="#333">Idee</text>
   </g>
 
-  <!-- NODE: DESIGN -->
+  <!-- NODE: Design -->
   <g id="node-design" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 155,110 C 157,108 193,108 200,109 C 240,108 244,110 245,112 C 246,127 245,147 244,150 C 242,152 206,153 200,152 C 158,153 156,151 155,149 C 154,134 155,113 155,110 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="200" y="136" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="14" font-weight="500" fill="#333">Design</text>
+    <rect x="158" y="110" width="84" height="44" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <text x="200" y="137" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" font-weight="500" fill="#333">Design</text>
   </g>
 
-  <!-- NODE: CODEBASE -->
+  <!-- NODE: Codebase -->
   <g id="node-codebase" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 143,207 C 145,205 190,205 200,206 C 250,205 255,207 256,209 C 257,225 256,248 255,251 C 253,253 210,254 200,253 C 148,254 146,252 145,250 C 144,235 143,210 143,207 Z" fill="white" stroke="#fa5d19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="200" y="234" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="14" font-weight="600" fill="#fa5d19">Codebase</text>
+    <rect x="148" y="207" width="104" height="48" rx="8" fill="white" stroke="#fa5d19" stroke-width="2"/>
+    <text x="200" y="236" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="14" font-weight="600" fill="#fa5d19">Codebase</text>
   </g>
 
   <!-- NODE: iOS -->
   <g id="node-ios" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 58,293 C 60,291 90,291 100,292 C 135,291 138,293 139,295 C 140,310 139,335 138,338 C 136,340 108,341 100,340 C 62,341 60,339 59,337 C 58,322 58,296 58,293 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <image href="/illustrations/logos/apple.svg" x="88" y="298" width="24" height="24"/>
-    <text x="100" y="333" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">iOS</text>
+    <rect x="56" y="293" width="88" height="48" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/logos/apple.svg" x="88" y="299" width="22" height="22"/>
+    <text x="100" y="334" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">iOS</text>
   </g>
 
   <!-- NODE: Android -->
   <g id="node-android" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 258,293 C 260,291 290,291 300,292 C 335,291 338,293 339,295 C 340,310 339,335 338,338 C 336,340 308,341 300,340 C 262,341 260,339 259,337 C 258,322 258,296 258,293 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <image href="/illustrations/android-svgrepo-com.svg" x="288" y="298" width="24" height="24"/>
-    <text x="300" y="333" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">Android</text>
+    <rect x="256" y="293" width="88" height="48" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/android-svgrepo-com.svg" x="288" y="299" width="22" height="22"/>
+    <text x="300" y="334" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">Android</text>
   </g>
 
   <!-- LEAVES: iOS -->
   <g id="leaf-ios-1" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
     <circle cx="72" cy="360" r="4" fill="#fa5d19"/>
-    <text x="72" y="375" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#737373">Push</text>
+    <text x="72" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Push</text>
   </g>
   <g id="leaf-ios-2" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
     <circle cx="100" cy="360" r="4" fill="#fa5d19"/>
-    <text x="100" y="375" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#737373">Offline</text>
+    <text x="100" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Offline</text>
   </g>
   <g id="leaf-ios-3" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
     <circle cx="128" cy="360" r="4" fill="#fa5d19"/>
-    <text x="128" y="375" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#737373">Perf</text>
+    <text x="128" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Perf</text>
   </g>
 
   <!-- LEAVES: Android -->
   <g id="leaf-android-1" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
     <circle cx="272" cy="360" r="4" fill="#fa5d19"/>
-    <text x="272" y="375" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#737373">Push</text>
+    <text x="272" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Push</text>
   </g>
   <g id="leaf-android-2" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
     <circle cx="300" cy="360" r="4" fill="#fa5d19"/>
-    <text x="300" y="375" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#737373">Offline</text>
+    <text x="300" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Offline</text>
   </g>
   <g id="leaf-android-3" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
     <circle cx="328" cy="360" r="4" fill="#fa5d19"/>
-    <text x="328" y="375" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#737373">Perf</text>
+    <text x="328" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Perf</text>
   </g>
 
   <!-- DOT PULSE -->

@@ -9,73 +9,60 @@
     </filter>
   </defs>
 
-  <!-- SPOKE PATHS (center to each satellite) -->
-  <path id="spoke-1" d="M 220 170 C 218 130, 216 100, 220 55" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-  <path id="spoke-2" d="M 185 190 C 145 185, 110 182, 60 185" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-  <path id="spoke-3" d="M 255 190 C 295 185, 330 182, 380 185" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-  <path id="spoke-4" d="M 195 215 C 160 250, 130 280, 100 310" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
-  <path id="spoke-5" d="M 245 215 C 280 250, 310 280, 340 310" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <!-- SPOKE PATHS -->
+  <path id="spoke-1" d="M 220 168 L 220 65" stroke="#ededed" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="spoke-2" d="M 178 190 L 105 190" stroke="#ededed" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="spoke-3" d="M 262 190 L 335 190" stroke="#ededed" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="spoke-4" d="M 192 212 L 130 290" stroke="#ededed" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="spoke-5" d="M 248 212 L 310 290" stroke="#ededed" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
 
-  <!-- CENTER NODE: Site Vitrine -->
+  <!-- CENTER NODE -->
   <g id="node-center" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 170,172 C 172,168 210,168 220,169 C 262,168 268,172 269,175 C 270,188 269,212 268,215 C 266,218 230,219 220,218 C 174,219 172,216 171,213 C 170,200 170,175 170,172 Z" fill="white" stroke="#fa5d19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="220" y="199" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" font-weight="600" fill="#fa5d19">Site Vitrine</text>
+    <rect x="170" y="170" width="100" height="44" rx="8" fill="white" stroke="#fa5d19" stroke-width="2"/>
+    <text x="220" y="197" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" font-weight="600" fill="#fa5d19">Site Vitrine</text>
   </g>
 
-  <!-- SATELLITE: SEO & Ranking (top) -->
+  <!-- SATELLITE: SEO -->
   <g id="node-seo" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 182,28 C 184,25 212,25 220,26 C 252,25 256,28 257,31 C 258,42 257,62 256,65 C 254,68 228,69 220,68 C 186,69 184,66 183,63 C 182,52 182,31 182,28 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Bar chart icon -->
-    <g transform="translate(196, 32)">
-      <rect x="0" y="14" width="5" height="10" rx="1" fill="#22c55e" opacity="0.7"/>
-      <rect x="7" y="8" width="5" height="16" rx="1" fill="#3b82f6" opacity="0.7"/>
-      <rect x="14" y="3" width="5" height="21" rx="1" fill="#fa5d19" opacity="0.7"/>
-      <path d="M 2 12 L 9 6 L 16 1" stroke="#333" stroke-width="1" fill="none" stroke-linecap="round"/>
-    </g>
-    <text x="220" y="62" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">SEO & Ranking</text>
+    <rect x="172" y="24" width="96" height="40" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <!-- Mini bar chart -->
+    <rect x="192" y="38" width="6" height="14" rx="1" fill="#22c55e" opacity="0.6"/>
+    <rect x="201" y="33" width="6" height="19" rx="1" fill="#3b82f6" opacity="0.6"/>
+    <rect x="210" y="28" width="6" height="24" rx="1" fill="#fa5d19" opacity="0.6"/>
+    <text x="238" y="49" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">SEO</text>
   </g>
 
-  <!-- SATELLITE: CMS (left) -->
+  <!-- SATELLITE: CMS -->
   <g id="node-cms" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 15,168 C 17,165 45,165 60,166 C 95,165 100,168 101,171 C 102,182 101,198 100,201 C 98,204 70,205 60,204 C 20,205 18,202 17,199 C 16,188 15,171 15,168 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Grid/layout icon -->
-    <g transform="translate(35, 172)">
-      <rect x="0" y="0" width="10" height="7" rx="1" fill="none" stroke="#333" stroke-width="1.2"/>
-      <rect x="12" y="0" width="10" height="7" rx="1" fill="none" stroke="#333" stroke-width="1.2"/>
-      <rect x="0" y="9" width="22" height="7" rx="1" fill="none" stroke="#333" stroke-width="1.2"/>
-    </g>
-    <text x="58" y="198" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">CMS</text>
+    <rect x="20" y="170" width="84" height="40" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <!-- Grid icon -->
+    <rect x="36" y="178" width="10" height="8" rx="1" stroke="#d4d4d4" stroke-width="1.2" fill="none"/>
+    <rect x="48" y="178" width="10" height="8" rx="1" stroke="#d4d4d4" stroke-width="1.2" fill="none"/>
+    <rect x="36" y="189" width="22" height="8" rx="1" stroke="#d4d4d4" stroke-width="1.2" fill="none"/>
+    <text x="72" y="194" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">CMS</text>
   </g>
 
-  <!-- SATELLITE: Mailing (right) -->
+  <!-- SATELLITE: Mailing -->
   <g id="node-mailing" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 340,168 C 342,165 370,165 380,166 C 418,165 422,168 423,171 C 424,182 423,198 422,201 C 420,204 392,205 380,204 C 344,205 342,202 341,199 C 340,188 340,171 340,168 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="336" y="170" width="84" height="40" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
     <!-- Envelope icon -->
-    <g transform="translate(358, 172)">
-      <rect x="0" y="2" width="22" height="14" rx="1" fill="none" stroke="#333" stroke-width="1.2"/>
-      <path d="M 0 3 L 11 10 L 22 3" fill="none" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    <text x="382" y="198" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Mailing</text>
+    <rect x="348" y="180" width="18" height="12" rx="1" stroke="#d4d4d4" stroke-width="1.2" fill="none"/>
+    <path d="M 348 181 L 357 188 L 366 181" stroke="#d4d4d4" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="380" y="192" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">Mailing</text>
   </g>
 
-  <!-- SATELLITE: Sur mesure (bottom-left) -->
+  <!-- SATELLITE: Sur mesure -->
   <g id="node-custom" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 50,292 C 52,289 85,289 100,290 C 140,289 145,292 146,295 C 147,306 146,326 145,329 C 143,332 110,333 100,332 C 55,333 53,330 52,327 C 51,316 50,295 50,292 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Code brackets icon -->
-    <g transform="translate(72, 296)">
-      <text font-family="'Geist Mono', monospace" font-size="16" fill="#a855f7" font-weight="600">&lt;/&gt;</text>
-    </g>
-    <text x="98" y="326" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Sur mesure</text>
+    <rect x="60" y="278" width="100" height="40" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <text x="93" y="296" font-family="'Geist Mono', monospace" font-size="12" font-weight="500" fill="#a855f7">&lt;/&gt;</text>
+    <text x="127" y="296" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">Sur mesure</text>
   </g>
 
-  <!-- SATELLITE: Stripe (bottom-right) -->
+  <!-- SATELLITE: Stripe -->
   <g id="node-stripe" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <path d="M 295,292 C 297,289 325,289 340,290 C 380,289 385,292 386,295 C 387,306 386,326 385,329 C 383,332 350,333 340,332 C 300,333 298,330 297,327 C 296,316 295,295 295,292 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Stripe logo reference -->
-    <g transform="translate(318, 296)">
-      <text font-family="'Geist', system-ui, sans-serif" font-size="14" fill="#635bff" font-weight="700">Stripe</text>
-    </g>
-    <text x="340" y="326" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Paiement</text>
+    <rect x="280" y="278" width="100" height="40" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <text x="310" y="296" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="700" fill="#635bff">Stripe</text>
+    <text x="352" y="296" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">Paiement</text>
   </g>
 
   <!-- DOT PULSE -->
