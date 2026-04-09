@@ -38,7 +38,7 @@
   <!-- NODE: iOS -->
   <g id="node-ios" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
     <rect x="56" y="293" width="88" height="48" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
-    <image href="/illustrations/logos/apple.svg" x="88" y="299" width="22" height="22"/>
+    <image href="/illustrations/app-store-svgrepo-com.svg" x="88" y="299" width="22" height="22"/>
     <text x="100" y="334" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">iOS</text>
   </g>
 
@@ -46,6 +46,7 @@
   <g id="node-android" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
     <rect x="256" y="293" width="88" height="48" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
     <image href="/illustrations/android-svgrepo-com.svg" x="288" y="299" width="22" height="22"/>
+
     <text x="300" y="334" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">Android</text>
   </g>
 
