@@ -1,36 +1,43 @@
-import ecommerceFunnelSvg from "../../assets/ecommerce-funnel.svg?raw";
+import ecommerceSvg from "../../assets/ecommerce-funnel.svg?raw";
 import { useExcalidrawFlow } from "./useExcalidrawFlow";
 import { runEntrance, showAllElements, type EntranceStep } from "./excalidrawEntrance";
-import { startFunnelLoop } from "./excalidrawFunnelLoop";
+import { startDotLoop } from "./excalidrawDotLoop";
 
 const SEQUENCE: EntranceStep[] = [
-  { selector: "#funnel-left", delay: 0, type: "line" },
-  { selector: "#funnel-right", delay: 0, type: "line" },
-  { selector: "#level-1", delay: 200, type: "group" },
-  { selector: "#separator-1", delay: 400, type: "line" },
-  { selector: "#level-2", delay: 500, type: "group" },
-  { selector: "#separator-2", delay: 700, type: "line" },
-  { selector: "#level-3", delay: 800, type: "group" },
-  { selector: "#separator-3", delay: 1000, type: "line" },
-  { selector: "#level-4", delay: 1100, type: "group" },
-  { selector: "#separator-4", delay: 1300, type: "line" },
-  { selector: "#level-5", delay: 1400, type: "group" },
-  { selector: "#funnel-fill", delay: 1400, type: "node" },
+  // Center node first
+  { selector: "#node-center", delay: 0, type: "node" },
+  // Spokes radiate outward
+  { selector: "#spoke-1", delay: 200, type: "line" },
+  { selector: "#spoke-2", delay: 300, type: "line" },
+  { selector: "#spoke-3", delay: 400, type: "line" },
+  { selector: "#spoke-4", delay: 500, type: "line" },
+  { selector: "#spoke-5", delay: 600, type: "line" },
+  // Satellites appear
+  { selector: "#node-seo", delay: 400, type: "node" },
+  { selector: "#node-cms", delay: 500, type: "node" },
+  { selector: "#node-mailing", delay: 600, type: "node" },
+  { selector: "#node-custom", delay: 700, type: "node" },
+  { selector: "#node-stripe", delay: 800, type: "node" },
 ];
 
 export function EcommerceFunnel() {
   const { containerProps } = useExcalidrawFlow(
-    ecommerceFunnelSvg,
+    ecommerceSvg,
     (el) => runEntrance(el, SEQUENCE),
-    (el) => startFunnelLoop(el),
-    (el) => showAllElements(el, '[id^="funnel-"], [id^="level-"], [id^="separator-"]'),
+    (el) => startDotLoop(el, {
+      linearPathIds: ["#spoke-1"],
+      forkPathIds: [],
+      cycleDuration: 2000,
+      pauseDuration: 500,
+    }),
+    (el) => showAllElements(el, '[id^="node-"], [id^="spoke-"]'),
   );
 
   return (
     <div
       {...containerProps}
       role="img"
-      aria-label="Entonnoir de conversion : visiteurs, landing page, produit, panier, achat"
+      aria-label="Mind map des services Sites Vitrines : CMS, SEO, Mailing, Sur mesure, Paiement Stripe"
     />
   );
 }

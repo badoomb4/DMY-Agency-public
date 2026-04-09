@@ -1,13 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 440 380" width="440" height="380">
   <defs>
-    <!-- Hachure pattern for funnel fill -->
-    <pattern id="hachure" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
-      <line x1="0" y1="0" x2="0" y2="8" stroke="#fa5d19" stroke-width="1.5" stroke-opacity="0.35"/>
-    </pattern>
-
-    <!-- Dot glow filter -->
-    <filter id="dot-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+    <filter id="dot-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -15,173 +9,75 @@
     </filter>
   </defs>
 
-  <!-- Funnel left side: from (60,30) converging to (140,370) -->
-  <path
-    id="funnel-left"
-    d="M 60 30 C 58 120, 80 200, 112 280 C 128 320, 138 350, 140 370"
-    fill="none"
-    stroke="#333"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    opacity="0"
-    stroke-dasharray="1000"
-    stroke-dashoffset="1000"
-  />
+  <!-- SPOKE PATHS (center to each satellite) -->
+  <path id="spoke-1" d="M 220 170 C 218 130, 216 100, 220 55" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="spoke-2" d="M 185 190 C 145 185, 110 182, 60 185" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="spoke-3" d="M 255 190 C 295 185, 330 182, 380 185" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="spoke-4" d="M 195 215 C 160 250, 130 280, 100 310" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
+  <path id="spoke-5" d="M 245 215 C 280 250, 310 280, 340 310" stroke="#d4d4d4" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0" stroke-dasharray="1000" stroke-dashoffset="1000"/>
 
-  <!-- Funnel right side: from (340,30) converging to (260,370) -->
-  <path
-    id="funnel-right"
-    d="M 340 30 C 342 120, 320 200, 288 280 C 272 320, 262 350, 260 370"
-    fill="none"
-    stroke="#333"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    opacity="0"
-    stroke-dasharray="1000"
-    stroke-dashoffset="1000"
-  />
-
-  <!-- Separator 1 — y≈98 -->
-  <path
-    id="separator-1"
-    d="M 66 96 C 120 99, 200 97, 280 99 C 310 98, 330 97, 334 98"
-    fill="none"
-    stroke="#333"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    opacity="0"
-    stroke-dasharray="1000"
-    stroke-dashoffset="1000"
-  />
-
-  <!-- Separator 2 — y≈166 -->
-  <path
-    id="separator-2"
-    d="M 82 164 C 140 167, 200 165, 260 167 C 290 166, 314 165, 318 166"
-    fill="none"
-    stroke="#333"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    opacity="0"
-    stroke-dasharray="1000"
-    stroke-dashoffset="1000"
-  />
-
-  <!-- Separator 3 — y≈234 -->
-  <path
-    id="separator-3"
-    d="M 98 232 C 150 235, 200 233, 250 235 C 278 234, 298 233, 302 234"
-    fill="none"
-    stroke="#333"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    opacity="0"
-    stroke-dasharray="1000"
-    stroke-dashoffset="1000"
-  />
-
-  <!-- Separator 4 — y≈302 -->
-  <path
-    id="separator-4"
-    d="M 114 300 C 160 303, 200 301, 240 303 C 262 302, 282 301, 286 302"
-    fill="none"
-    stroke="#333"
-    stroke-width="1.5"
-    stroke-linecap="round"
-    opacity="0"
-    stroke-dasharray="1000"
-    stroke-dashoffset="1000"
-  />
-
-  <!-- Funnel fill — hachure at bottom -->
-  <path
-    id="funnel-fill"
-    d="M 114 302 C 122 320, 130 345, 140 370 L 260 370 C 270 345, 278 320, 286 302 Z"
-    fill="url(#hachure)"
-    stroke="#fa5d19"
-    stroke-width="1"
-    stroke-opacity="0.5"
-    opacity="0"
-    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
-  />
-
-  <!-- Level 1 — Visiteurs y≈55 -->
-  <g id="level-1" opacity="0" style="transform: translateY(8px);">
-    <!-- Person silhouettes icon -->
-    <g transform="translate(72, 42)">
-      <!-- Person 1 -->
-      <circle cx="8" cy="6" r="4" fill="none" stroke="#333" stroke-width="1.3"/>
-      <path d="M 2 20 Q 2 13 8 13 Q 14 13 14 20" fill="none" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
-      <!-- Person 2 (slightly behind) -->
-      <circle cx="17" cy="6" r="3.5" fill="#fff" stroke="#333" stroke-width="1.3"/>
-      <path d="M 11 20 Q 11 13 17 13 Q 23 13 23 20" fill="#fff" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
-    </g>
-    <text x="106" y="57" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Visiteurs</text>
-    <text x="338" y="57" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">100%</text>
+  <!-- CENTER NODE: Site Vitrine -->
+  <g id="node-center" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <path d="M 170,172 C 172,168 210,168 220,169 C 262,168 268,172 269,175 C 270,188 269,212 268,215 C 266,218 230,219 220,218 C 174,219 172,216 171,213 C 170,200 170,175 170,172 Z" fill="white" stroke="#fa5d19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="220" y="199" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" font-weight="600" fill="#fa5d19">Site Vitrine</text>
   </g>
 
-  <!-- Level 2 — Landing y≈125 -->
-  <g id="level-2" opacity="0" style="transform: translateY(8px);">
-    <!-- Monitor icon -->
-    <g transform="translate(82, 112)">
-      <rect x="0" y="0" width="22" height="16" rx="2" fill="none" stroke="#333" stroke-width="1.3"/>
-      <line x1="8" y1="16" x2="6" y2="22" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
-      <line x1="14" y1="16" x2="16" y2="22" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
-      <line x1="4" y1="22" x2="18" y2="22" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
-      <!-- Screen content lines -->
-      <line x1="4" y1="5" x2="18" y2="5" stroke="#333" stroke-width="0.8" stroke-linecap="round"/>
-      <line x1="4" y1="9" x2="14" y2="9" stroke="#333" stroke-width="0.8" stroke-linecap="round"/>
+  <!-- SATELLITE: SEO & Ranking (top) -->
+  <g id="node-seo" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <path d="M 182,28 C 184,25 212,25 220,26 C 252,25 256,28 257,31 C 258,42 257,62 256,65 C 254,68 228,69 220,68 C 186,69 184,66 183,63 C 182,52 182,31 182,28 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Bar chart icon -->
+    <g transform="translate(196, 32)">
+      <rect x="0" y="14" width="5" height="10" rx="1" fill="#22c55e" opacity="0.7"/>
+      <rect x="7" y="8" width="5" height="16" rx="1" fill="#3b82f6" opacity="0.7"/>
+      <rect x="14" y="3" width="5" height="21" rx="1" fill="#fa5d19" opacity="0.7"/>
+      <path d="M 2 12 L 9 6 L 16 1" stroke="#333" stroke-width="1" fill="none" stroke-linecap="round"/>
     </g>
-    <text x="116" y="127" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Landing</text>
-    <text x="338" y="127" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">60%</text>
+    <text x="220" y="62" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">SEO & Ranking</text>
   </g>
 
-  <!-- Level 3 — Produit y≈195 -->
-  <g id="level-3" opacity="0" style="transform: translateY(8px);">
-    <!-- Box/package icon -->
-    <g transform="translate(90, 182)">
-      <!-- Box body -->
-      <rect x="0" y="6" width="22" height="16" rx="1" fill="none" stroke="#333" stroke-width="1.3"/>
-      <!-- Box top flaps -->
-      <path d="M 0 6 L 5 0 L 17 0 L 22 6" fill="none" stroke="#333" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- Tape line -->
-      <line x1="11" y1="0" x2="11" y2="22" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 1"/>
+  <!-- SATELLITE: CMS (left) -->
+  <g id="node-cms" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <path d="M 15,168 C 17,165 45,165 60,166 C 95,165 100,168 101,171 C 102,182 101,198 100,201 C 98,204 70,205 60,204 C 20,205 18,202 17,199 C 16,188 15,171 15,168 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Grid/layout icon -->
+    <g transform="translate(35, 172)">
+      <rect x="0" y="0" width="10" height="7" rx="1" fill="none" stroke="#333" stroke-width="1.2"/>
+      <rect x="12" y="0" width="10" height="7" rx="1" fill="none" stroke="#333" stroke-width="1.2"/>
+      <rect x="0" y="9" width="22" height="7" rx="1" fill="none" stroke="#333" stroke-width="1.2"/>
     </g>
-    <text x="124" y="197" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Produit</text>
-    <text x="338" y="197" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">35%</text>
+    <text x="58" y="198" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">CMS</text>
   </g>
 
-  <!-- Level 4 — Panier y≈265 -->
-  <g id="level-4" opacity="0" style="transform: translateY(8px);">
-    <!-- Cart icon -->
-    <g transform="translate(100, 252)">
-      <!-- Cart handle -->
-      <path d="M 0 3 L 4 3 L 8 16 L 20 16 L 22 8 L 6 8" fill="none" stroke="#333" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- Wheels -->
-      <circle cx="10" cy="19" r="2" fill="none" stroke="#333" stroke-width="1.3"/>
-      <circle cx="18" cy="19" r="2" fill="none" stroke="#333" stroke-width="1.3"/>
+  <!-- SATELLITE: Mailing (right) -->
+  <g id="node-mailing" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <path d="M 340,168 C 342,165 370,165 380,166 C 418,165 422,168 423,171 C 424,182 423,198 422,201 C 420,204 392,205 380,204 C 344,205 342,202 341,199 C 340,188 340,171 340,168 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Envelope icon -->
+    <g transform="translate(358, 172)">
+      <rect x="0" y="2" width="22" height="14" rx="1" fill="none" stroke="#333" stroke-width="1.2"/>
+      <path d="M 0 3 L 11 10 L 22 3" fill="none" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
-    <text x="134" y="267" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Panier</text>
-    <text x="338" y="267" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">20%</text>
+    <text x="382" y="198" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Mailing</text>
   </g>
 
-  <!-- Level 5 — Achat y≈335 -->
-  <g id="level-5" opacity="0" style="transform: translateY(8px);">
-    <!-- Credit card icon -->
-    <g transform="translate(112, 322)">
-      <rect x="0" y="0" width="26" height="18" rx="2" fill="none" stroke="#333" stroke-width="1.3"/>
-      <!-- Magnetic strip top -->
-      <rect x="0" y="5" width="26" height="4" fill="#333" fill-opacity="0.18" stroke="none"/>
-      <!-- Chip -->
-      <rect x="3" y="11" width="6" height="4" rx="1" fill="none" stroke="#333" stroke-width="1"/>
-      <!-- Card number dots -->
-      <circle cx="14" cy="13" r="1" fill="#333" fill-opacity="0.4"/>
-      <circle cx="17" cy="13" r="1" fill="#333" fill-opacity="0.4"/>
-      <circle cx="20" cy="13" r="1" fill="#333" fill-opacity="0.4"/>
+  <!-- SATELLITE: Sur mesure (bottom-left) -->
+  <g id="node-custom" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <path d="M 50,292 C 52,289 85,289 100,290 C 140,289 145,292 146,295 C 147,306 146,326 145,329 C 143,332 110,333 100,332 C 55,333 53,330 52,327 C 51,316 50,295 50,292 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Code brackets icon -->
+    <g transform="translate(72, 296)">
+      <text font-family="'Geist Mono', monospace" font-size="16" fill="#a855f7" font-weight="600">&lt;/&gt;</text>
     </g>
-    <text x="150" y="337" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#333">Achat</text>
-    <text x="338" y="337" font-family="'Geist', system-ui, sans-serif" font-size="11" fill="#a3a3a3" font-style="italic">8%</text>
+    <text x="98" y="326" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Sur mesure</text>
   </g>
+
+  <!-- SATELLITE: Stripe (bottom-right) -->
+  <g id="node-stripe" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <path d="M 295,292 C 297,289 325,289 340,290 C 380,289 385,292 386,295 C 387,306 386,326 385,329 C 383,332 350,333 340,332 C 300,333 298,330 297,327 C 296,316 295,295 295,292 Z" fill="white" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Stripe logo reference -->
+    <g transform="translate(318, 296)">
+      <text font-family="'Geist', system-ui, sans-serif" font-size="14" fill="#635bff" font-weight="700">Stripe</text>
+    </g>
+    <text x="340" y="326" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Paiement</text>
+  </g>
+
+  <!-- DOT PULSE -->
+  <circle id="dot-pulse" r="4" fill="#fa5d19" opacity="0" filter="url(#dot-glow)"/>
 </svg>
