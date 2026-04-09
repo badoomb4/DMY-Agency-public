@@ -1,7 +1,7 @@
 import ecommerceSvg from "../../assets/ecommerce-funnel.svg?raw";
 import { useExcalidrawFlow } from "./useExcalidrawFlow";
 import { runEntrance, showAllElements, type EntranceStep } from "./excalidrawEntrance";
-import { startDotLoop } from "./excalidrawDotLoop";
+
 
 const SEQUENCE: EntranceStep[] = [
   // Center node first
@@ -24,12 +24,7 @@ export function EcommerceFunnel() {
   const { containerProps } = useExcalidrawFlow(
     ecommerceSvg,
     (el) => runEntrance(el, SEQUENCE),
-    (el) => startDotLoop(el, {
-      linearPathIds: ["#spoke-1"],
-      forkPathIds: [],
-      cycleDuration: 2000,
-      pauseDuration: 500,
-    }),
+    () => () => {},
     (el) => showAllElements(el, '[id^="node-"], [id^="spoke-"]'),
   );
 
