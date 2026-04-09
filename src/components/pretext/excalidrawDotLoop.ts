@@ -3,6 +3,7 @@ export type DotLoopConfig = {
   linearPathIds: string[];
   forkPathIds: string[];
   endpointIds?: string[];
+  milestoneIds?: string[];
   cycleDuration?: number;
   pauseDuration?: number;
 };
@@ -15,6 +16,7 @@ export function startDotLoop(
     dotId = "#dot-pulse",
     linearPathIds,
     forkPathIds,
+    milestoneIds = [],
     cycleDuration = 3000,
     pauseDuration = 1000,
   } = config;
@@ -52,17 +54,34 @@ export function startDotLoop(
   const maxFork = forkLens.length > 0 ? Math.max(...forkLens) : 0;
   const totalLength = totalLinear + maxFork;
 
+  // Resolve milestone elements for pulse effect
+  const milestoneEls = milestoneIds
+    .map((id) => container.querySelector(id) as SVGElement | null)
+    .filter(Boolean) as SVGElement[];
+  // Milestone positions as fractions of totalLinear
+  const milestonePositions = milestoneEls.length > 0
+    ? milestoneEls.map((_, i) => (i + 1) / (milestoneEls.length + 1))
+    : [];
+
   let raf = 0;
   let startTime = 0;
   let clone: SVGCircleElement | null = null;
+  let lastPulsedMilestone = -1;
+
+  function pulseMilestone(el: SVGElement) {
+    el.style.transition = "transform 150ms ease-out";
+    el.style.transform = "scale(1.3)";
+    setTimeout(() => { el.style.transform = "scale(1)"; }, 150);
+  }
 
   function tick(time: number) {
-    if (!startTime) startTime = time;
+    if (!startTime) { startTime = time; lastPulsedMilestone = -1; }
     const elapsed = (time - startTime) % (cycleDuration + pauseDuration);
 
     if (elapsed > cycleDuration) {
       dot.style.opacity = "0";
       if (clone) clone.style.opacity = "0";
+      lastPulsedMilestone = -1;
       raf = requestAnimationFrame(tick);
       return;
     }
@@ -82,6 +101,15 @@ export function startDotLoop(
           break;
         }
         remaining -= linearLens[i]!;
+      }
+
+      // Pulse milestones as dot passes them
+      const linearProgress = dist / totalLinear;
+      for (let m = 0; m < milestonePositions.length; m++) {
+        if (linearProgress >= milestonePositions[m]! && m > lastPulsedMilestone) {
+          lastPulsedMilestone = m;
+          pulseMilestone(milestoneEls[m]!);
+        }
       }
     } else if (forkPaths.length >= 2) {
       const forkDist = dist - totalLinear;

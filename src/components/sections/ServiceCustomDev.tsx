@@ -4,6 +4,8 @@ import { MonitorPretext } from "../pretext/MonitorPretext";
 import { BotChat } from "../pretext/BotChat";
 import { GlitchTitle } from "../pretext/GlitchTitle";
 import { AutomationFlow } from "../pretext/AutomationFlow";
+import { MobileTree } from "../pretext/MobileTree";
+import { EcommerceFunnel } from "../pretext/EcommerceFunnel";
 
 const offerings = [
   {
@@ -89,7 +91,8 @@ export function ServiceCustomDev() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: 32,
+                    paddingTop: 20,
+                    paddingBottom: 20,
                     position: "relative" as const,
                     overflow: "hidden",
                   }}
@@ -100,6 +103,10 @@ export function ServiceCustomDev() {
                     <BotChat />
                   ) : item.illustration === "automation" ? (
                     <AutomationFlow />
+                  ) : item.illustration === "app-mobile" ? (
+                    <MobileTree />
+                  ) : item.illustration === "ecommerce" ? (
+                    <EcommerceFunnel />
                   ) : (
                     <img
                       src={`/illustrations/${item.illustration}.svg`}

@@ -79,7 +79,7 @@ export function showAllElements(container: HTMLElement, selector: string): void 
   elements.forEach((node) => {
     const el = node as SVGElement;
     el.style.opacity = "1";
-    el.style.transform = "scale(1)";
+    el.style.transform = "none";
     const path = el.querySelector(".arrow-path") as SVGPathElement | null;
     if (path) path.style.strokeDashoffset = "0";
     if ((el as unknown as SVGPathElement).getTotalLength) {
