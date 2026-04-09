@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 420" width="400" height="420">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 440" width="400" height="440">
   <defs>
     <filter id="dot-glow" x="-100%" y="-100%" width="300%" height="300%">
       <feGaussianBlur stdDeviation="3" result="blur"/>
@@ -50,32 +50,38 @@
     <text x="300" y="334" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">Android</text>
   </g>
 
-  <!-- LEAVES: iOS -->
+  <!-- LEAVES: iOS (app icon style) -->
   <g id="leaf-ios-1" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <circle cx="72" cy="360" r="4" fill="#fa5d19"/>
-    <text x="72" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Push</text>
+    <rect x="48" y="355" width="34" height="34" rx="8" fill="#fa5d19" opacity="0.08" stroke="#fa5d19" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="65" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#fa5d19">🔔</text>
+    <text x="65" y="402" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Push</text>
   </g>
   <g id="leaf-ios-2" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <circle cx="100" cy="360" r="4" fill="#fa5d19"/>
-    <text x="100" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Offline</text>
+    <rect x="88" y="355" width="34" height="34" rx="8" fill="#3b82f6" opacity="0.08" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="105" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#3b82f6">📡</text>
+    <text x="105" y="402" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Offline</text>
   </g>
   <g id="leaf-ios-3" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <circle cx="128" cy="360" r="4" fill="#fa5d19"/>
-    <text x="128" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Perf</text>
+    <rect x="128" y="355" width="34" height="34" rx="8" fill="#22c55e" opacity="0.08" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="145" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#22c55e">⚡</text>
+    <text x="145" y="402" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Perf</text>
   </g>
 
-  <!-- LEAVES: Android -->
+  <!-- LEAVES: Android (app icon style) -->
   <g id="leaf-android-1" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <circle cx="272" cy="360" r="4" fill="#fa5d19"/>
-    <text x="272" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Push</text>
+    <rect x="248" y="355" width="34" height="34" rx="8" fill="#fa5d19" opacity="0.08" stroke="#fa5d19" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="265" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#fa5d19">🔔</text>
+    <text x="265" y="402" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Push</text>
   </g>
   <g id="leaf-android-2" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <circle cx="300" cy="360" r="4" fill="#fa5d19"/>
-    <text x="300" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Offline</text>
+    <rect x="288" y="355" width="34" height="34" rx="8" fill="#3b82f6" opacity="0.08" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="305" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#3b82f6">📡</text>
+    <text x="305" y="402" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Offline</text>
   </g>
   <g id="leaf-android-3" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
-    <circle cx="328" cy="360" r="4" fill="#fa5d19"/>
-    <text x="328" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" fill="#a3a3a3">Perf</text>
+    <rect x="328" y="355" width="34" height="34" rx="8" fill="#22c55e" opacity="0.08" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="345" y="376" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="13" fill="#22c55e">⚡</text>
+    <text x="345" y="402" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Perf</text>
   </g>
 
   <!-- DOT PULSE -->
