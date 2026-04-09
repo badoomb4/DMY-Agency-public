@@ -1,0 +1,41 @@
+---
+import { LandingPage } from "../components/LandingPage";
+---
+
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="DMY — Développement sur mesure et conseil en intelligence artificielle." />
+		<title>DMY — Services informatiques vitaminés à l'IA</title>
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+		<link href="https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin.css" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/fontsource/fonts/geist-mono@latest/latin.css" rel="stylesheet" />
+		<style is:global>
+			*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+			html { scroll-behavior: smooth; }
+			body {
+				background: #f9f9f9;
+				color: #262626;
+				font-family: 'Geist', system-ui, -apple-system, sans-serif;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			@font-face {
+				font-family: 'Virgil';
+				src: url('/fonts/Virgil.woff2') format('woff2');
+				font-display: swap;
+			}
+			@keyframes fadeSlideIn {
+				from { opacity: 0; transform: translateY(8px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+		</style>
+	</head>
+	<body>
+		<LandingPage client:load />
+	</body>
+</html>
