@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Hachure pattern for funnel fill -->
+    <pattern id="hachure" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#fa5d19" stroke-width="1.5" stroke-opacity="0.35"/>
+    </pattern>
+
+    <!-- Dot glow filter -->
+    <filter id="dot-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Funnel left side: from (60,30) converging to (140,370) -->
+  <path
+    id="funnel-left"
+    d="M 60 30 C 58 120, 80 200, 112 280 C 128 320, 138 350, 140 370"
+    fill="none"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+
+  <!-- Funnel right side: from (340,30) converging to (260,370) -->
+  <path
+    id="funnel-right"
+    d="M 340 30 C 342 120, 320 200, 288 280 C 272 320, 262 350, 260 370"
+    fill="none"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+
+  <!-- Separator 1 — y≈98 -->
+  <path
+    id="separator-1"
+    d="M 66 96 C 120 99, 200 97, 280 99 C 310 98, 330 97, 334 98"
+    fill="none"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+
+  <!-- Separator 2 — y≈166 -->
+  <path
+    id="separator-2"
+    d="M 82 164 C 140 167, 200 165, 260 167 C 290 166, 314 165, 318 166"
+    fill="none"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+
+  <!-- Separator 3 — y≈234 -->
+  <path
+    id="separator-3"
+    d="M 98 232 C 150 235, 200 233, 250 235 C 278 234, 298 233, 302 234"
+    fill="none"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+
+  <!-- Separator 4 — y≈302 -->
+  <path
+    id="separator-4"
+    d="M 114 300 C 160 303, 200 301, 240 303 C 262 302, 282 301, 286 302"
+    fill="none"
+    stroke="#333"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    opacity="0"
+    stroke-dasharray="1000"
+    stroke-dashoffset="1000"
+  />
+
+  <!-- Funnel fill — hachure at bottom -->
+  <path
+    id="funnel-fill"
+    d="M 114 302 C 122 320, 130 345, 140 370 L 260 370 C 270 345, 278 320, 286 302 Z"
+    fill="url(#hachure)"
+    stroke="#fa5d19"
+    stroke-width="1"
+    stroke-opacity="0.5"
+    opacity="0"
+    style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);"
+  />
+
+  <!-- Level 1 — Visiteurs y≈55 -->
+  <g id="level-1" opacity="0" style="transform: translateY(8px);">
+    <!-- Person silhouettes icon -->
+    <g transform="translate(72, 42)">
+      <!-- Person 1 -->
+      <circle cx="8" cy="6" r="4" fill="none" stroke="#333" stroke-width="1.3"/>
+      <path d="M 2 20 Q 2 13 8 13 Q 14 13 14 20" fill="none" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Person 2 (slightly behind) -->
+      <circle cx="17" cy="6" r="3.5" fill="#fff" stroke="#333" stroke-width="1.3"/>
+      <path d="M 11 20 Q 11 13 17 13 Q 23 13 23 20" fill="#fff" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
+    </g>
+    <text x="106" y="57" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Visiteurs</text>
+    <text x="338" y="57" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">100%</text>
+  </g>
+
+  <!-- Level 2 — Landing y≈125 -->
+  <g id="level-2" opacity="0" style="transform: translateY(8px);">
+    <!-- Monitor icon -->
+    <g transform="translate(82, 112)">
+      <rect x="0" y="0" width="22" height="16" rx="2" fill="none" stroke="#333" stroke-width="1.3"/>
+      <line x1="8" y1="16" x2="6" y2="22" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="14" y1="16" x2="16" y2="22" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="4" y1="22" x2="18" y2="22" stroke="#333" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- Screen content lines -->
+      <line x1="4" y1="5" x2="18" y2="5" stroke="#333" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="4" y1="9" x2="14" y2="9" stroke="#333" stroke-width="0.8" stroke-linecap="round"/>
+    </g>
+    <text x="116" y="127" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Landing</text>
+    <text x="338" y="127" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">60%</text>
+  </g>
+
+  <!-- Level 3 — Produit y≈195 -->
+  <g id="level-3" opacity="0" style="transform: translateY(8px);">
+    <!-- Box/package icon -->
+    <g transform="translate(90, 182)">
+      <!-- Box body -->
+      <rect x="0" y="6" width="22" height="16" rx="1" fill="none" stroke="#333" stroke-width="1.3"/>
+      <!-- Box top flaps -->
+      <path d="M 0 6 L 5 0 L 17 0 L 22 6" fill="none" stroke="#333" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Tape line -->
+      <line x1="11" y1="0" x2="11" y2="22" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 1"/>
+    </g>
+    <text x="124" y="197" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Produit</text>
+    <text x="338" y="197" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">35%</text>
+  </g>
+
+  <!-- Level 4 — Panier y≈265 -->
+  <g id="level-4" opacity="0" style="transform: translateY(8px);">
+    <!-- Cart icon -->
+    <g transform="translate(100, 252)">
+      <!-- Cart handle -->
+      <path d="M 0 3 L 4 3 L 8 16 L 20 16 L 22 8 L 6 8" fill="none" stroke="#333" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Wheels -->
+      <circle cx="10" cy="19" r="2" fill="none" stroke="#333" stroke-width="1.3"/>
+      <circle cx="18" cy="19" r="2" fill="none" stroke="#333" stroke-width="1.3"/>
+    </g>
+    <text x="134" y="267" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Panier</text>
+    <text x="338" y="267" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">20%</text>
+  </g>
+
+  <!-- Level 5 — Achat y≈335 -->
+  <g id="level-5" opacity="0" style="transform: translateY(8px);">
+    <!-- Credit card icon -->
+    <g transform="translate(112, 322)">
+      <rect x="0" y="0" width="26" height="18" rx="2" fill="none" stroke="#333" stroke-width="1.3"/>
+      <!-- Magnetic strip top -->
+      <rect x="0" y="5" width="26" height="4" fill="#333" fill-opacity="0.18" stroke="none"/>
+      <!-- Chip -->
+      <rect x="3" y="11" width="6" height="4" rx="1" fill="none" stroke="#333" stroke-width="1"/>
+      <!-- Card number dots -->
+      <circle cx="14" cy="13" r="1" fill="#333" fill-opacity="0.4"/>
+      <circle cx="17" cy="13" r="1" fill="#333" fill-opacity="0.4"/>
+      <circle cx="20" cy="13" r="1" fill="#333" fill-opacity="0.4"/>
+    </g>
+    <text x="150" y="337" font-family="Virgil, Segoe Print, cursive" font-size="13" fill="#333">Achat</text>
+    <text x="338" y="337" font-family="Virgil, Segoe Print, cursive" font-size="11" fill="#a3a3a3" font-style="italic">8%</text>
+  </g>
+</svg>
