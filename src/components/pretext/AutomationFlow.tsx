@@ -66,6 +66,28 @@ export function AutomationFlow() {
 
   return (
     <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column" }}>
+      {/* Title */}
+      <div style={{ textAlign: "center", padding: "8px 0 4px" }}>
+        <span style={{
+          fontFamily: "'Geist Mono', monospace",
+          fontSize: 11,
+          fontWeight: 500,
+          color: "#fa5d19",
+          letterSpacing: "-0.3px",
+        }}>
+          {String(active + 1).padStart(2, "0")} / {String(SLIDES.length).padStart(2, "0")}
+        </span>
+        <span style={{
+          fontFamily: "'Geist', system-ui, sans-serif",
+          fontSize: 13,
+          fontWeight: 600,
+          color: "#262626",
+          marginLeft: 8,
+        }}>
+          {SLIDES[active]!.label}
+        </span>
+      </div>
+
       {/* Slide */}
       <div style={{ flex: 1, minHeight: 0 }}>
         <SlideView key={active} slide={SLIDES[active]!} />

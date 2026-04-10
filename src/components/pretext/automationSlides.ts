@@ -15,7 +15,7 @@ export type AutomationSlide = {
 export const SLIDES: AutomationSlide[] = [
   {
     svg: flow1Svg,
-    label: "Multi-sources",
+    label: "Collecte multi-sources",
     sequence: [
       { selector: "#node-source-1", delay: 0, type: "node" },
       { selector: "#node-source-2", delay: 100, type: "node" },
@@ -40,7 +40,7 @@ export const SLIDES: AutomationSlide[] = [
   },
   {
     svg: flow2Svg,
-    label: "E-commerce",
+    label: "Pipeline e-commerce",
     sequence: [
       { selector: "#node-1", delay: 0, type: "node" },
       { selector: "#arrow-1", delay: 200, type: "arrow" },
@@ -58,7 +58,7 @@ export const SLIDES: AutomationSlide[] = [
   },
   {
     svg: flow3Svg,
-    label: "Bot navigateur",
+    label: "Bot navigateur automatisé",
     sequence: [
       { selector: "#node-1", delay: 0, type: "node" },
       { selector: "#arrow-1", delay: 200, type: "arrow" },
