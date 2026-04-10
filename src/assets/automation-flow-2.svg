@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 280" width="700" height="280">
+  <defs>
+    <filter id="dot-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ARROWS -->
+  <g id="arrow-1" opacity="0">
+    <path class="arrow-path" d="M 130 140 L 198 140" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 195 136 L 203 140 L 195 144" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="arrow-2" opacity="0">
+    <path class="arrow-path" d="M 300 140 L 358 140" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 355 136 L 363 140 L 355 144" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="arrow-3" opacity="0">
+    <path class="arrow-path" d="M 460 140 L 528 140" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 525 136 L 533 140 L 525 144" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- NODE 1: Commande Stripe -->
+  <g id="node-1" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="20" y="108" width="110" height="64" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <rect x="48" y="116" width="28" height="20" rx="3" stroke="#635bff" stroke-width="1.3" fill="none"/>
+    <rect x="48" y="122" width="28" height="4" fill="#635bff" opacity="0.15"/>
+    <rect x="52" y="128" width="8" height="3" rx="1" stroke="#635bff" stroke-width="0.8" fill="none"/>
+    <text x="75" y="155" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Commande</text>
+    <text x="75" y="167" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="600" fill="#635bff">Stripe</text>
+  </g>
+
+  <!-- NODE 2: Facture auto -->
+  <g id="node-2" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="200" y="108" width="100" height="64" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <rect x="237" y="116" width="22" height="28" rx="2" stroke="#737373" stroke-width="1.3" fill="none"/>
+    <line x1="241" y1="124" x2="255" y2="124" stroke="#d4d4d4" stroke-width="1" stroke-linecap="round"/>
+    <line x1="241" y1="129" x2="255" y2="129" stroke="#d4d4d4" stroke-width="1" stroke-linecap="round"/>
+    <line x1="241" y1="134" x2="249" y2="134" stroke="#d4d4d4" stroke-width="1" stroke-linecap="round"/>
+    <text x="250" y="161" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Facture auto</text>
+  </g>
+
+  <!-- NODE 3: Notification client -->
+  <g id="node-3" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="360" y="108" width="100" height="64" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <path d="M 401 120 C 401 116 405 112 410 112 C 415 112 419 116 419 120 L 419 130 L 422 133 L 398 133 L 401 130 Z" stroke="#737373" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+    <line x1="407" y1="134" x2="413" y2="137" stroke="#737373" stroke-width="1.3" stroke-linecap="round"/>
+    <text x="410" y="155" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">Notification</text>
+    <text x="410" y="167" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">client</text>
+  </g>
+
+  <!-- NODE 4: Mise à jour stock -->
+  <g id="node-4" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="530" y="108" width="110" height="64" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <rect x="566" y="116" width="24" height="18" rx="2" stroke="#737373" stroke-width="1.3" fill="none"/>
+    <path d="M 566 122 L 578 116 L 590 122" stroke="#737373" stroke-width="1" fill="none" stroke-linejoin="round"/>
+    <line x1="578" y1="116" x2="578" y2="134" stroke="#737373" stroke-width="0.8"/>
+    <text x="585" y="155" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">Mise à jour</text>
+    <text x="585" y="167" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">stock</text>
+  </g>
+
+  <circle id="dot-pulse" r="4" fill="#fa5d19" opacity="0" filter="url(#dot-glow)"/>
+</svg>
