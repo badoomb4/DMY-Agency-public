@@ -4,15 +4,23 @@ import { runEntrance, showAllElements, type EntranceStep } from "./excalidrawEnt
 import { startDotLoop, type DotLoopConfig } from "./excalidrawDotLoop";
 
 const SEQUENCE: EntranceStep[] = [
-  { selector: "#node-form", delay: 0, type: "node" },
-  { selector: "#arrow-1", delay: 200, type: "arrow" },
-  { selector: "#node-sheets", delay: 400, type: "node" },
-  { selector: "#arrow-2", delay: 600, type: "arrow" },
-  { selector: "#node-email", delay: 800, type: "node" },
-  { selector: "#arrow-3a", delay: 1000, type: "arrow" },
-  { selector: "#arrow-3b", delay: 1000, type: "arrow" },
-  { selector: "#node-whatsapp", delay: 1200, type: "node" },
-  { selector: "#node-telegram", delay: 1200, type: "node" },
+  // 3 sources appear
+  { selector: "#node-source-1", delay: 0, type: "node" },
+  { selector: "#node-source-2", delay: 100, type: "node" },
+  { selector: "#node-source-3", delay: 200, type: "node" },
+  // Convergence lines
+  { selector: "#arrow-source-top", delay: 300, type: "arrow" },
+  { selector: "#arrow-source-mid", delay: 300, type: "arrow" },
+  { selector: "#arrow-source-bot", delay: 300, type: "arrow" },
+  // Main flow
+  { selector: "#arrow-1", delay: 500, type: "arrow" },
+  { selector: "#node-sheets", delay: 700, type: "node" },
+  { selector: "#arrow-2", delay: 900, type: "arrow" },
+  { selector: "#node-email", delay: 1100, type: "node" },
+  { selector: "#arrow-3a", delay: 1300, type: "arrow" },
+  { selector: "#arrow-3b", delay: 1300, type: "arrow" },
+  { selector: "#node-whatsapp", delay: 1500, type: "node" },
+  { selector: "#node-telegram", delay: 1500, type: "node" },
 ];
 
 const DOT_CONFIG: DotLoopConfig = {
@@ -32,7 +40,7 @@ export function AutomationFlow() {
     <div
       {...containerProps}
       role="img"
-      aria-label="Schema d'un workflow d'automatisation : formulaire web vers Google Sheets, email et notifications WhatsApp/Telegram"
+      aria-label="Schema d'un workflow d'automatisation : sources multiples vers Google Sheets, email et notifications WhatsApp/Telegram"
     />
   );
 }
