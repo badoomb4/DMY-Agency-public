@@ -6,6 +6,7 @@ import { GlitchTitle } from "../pretext/GlitchTitle";
 import { AutomationFlow } from "../pretext/AutomationFlow";
 import { MobileTree } from "../pretext/MobileTree";
 import { EcommerceFunnel } from "../pretext/EcommerceFunnel";
+import { TopCrosses, BottomCrosses } from "../pretext/GridCross";
 
 const offerings = [
   {
@@ -30,13 +31,6 @@ const offerings = [
     illustration: "bot-platforms",
   },
   {
-    title: "APIs & Microservices",
-    description:
-      "On structure vos données et vos traitements dans des APIs documentées, versionnées et sécurisées. Architecture microservices quand la complexité l'exige, monolithe pragmatique quand ça suffit. Toujours scalable, toujours testée.",
-    tags: ["Node.js", "Python", "GraphQL", "REST", "Docker"],
-    illustration: "api",
-  },
-  {
     title: "Automatisation",
     description:
       "On identifie les tâches répétitives qui freinent vos équipes et on les automatise : synchronisation de données, génération de documents, alertes intelligentes, pipelines ETL. Moins de travail manuel, plus de fiabilité.",
@@ -54,11 +48,11 @@ const offerings = [
 
 export function ServiceCustomDev() {
   return (
-    <div style={{ marginTop: 60 }}>
+    <div >
       <ScrollReveal>
         <Group gap="sm" align="center">
           <Text fz={28}>⚡</Text>
-          <GlitchTitle fz={28}>Solutions sur mesure</GlitchTitle>
+          <GlitchTitle fz={28} as="h2">Solutions sur mesure</GlitchTitle>
         </Group>
         <Text fz="sm" c="#737373" mt="xs" maw={480}>
           On crée toutes sortes d'applications, bots et systèmes adaptés
@@ -66,20 +60,20 @@ export function ServiceCustomDev() {
         </Text>
       </ScrollReveal>
 
-      <Stack gap={0} mt={32} style={{ border: "1px solid #ededed", borderBottom: "none" }}>
+      <Stack gap={0} mt={32} style={{ position: "relative", border: "1px solid #ededed", borderBottom: "none" }}>        <TopCrosses />
         {offerings.map((item, i) => {
           const imageLeft = i % 2 === 0;
           return (
             <ScrollReveal key={item.title} delay={i * 60} direction="up">
               <Box
                 style={{
+                  position: "relative" as const,
                   display: "flex",
                   flexDirection: imageLeft ? "row" as const : "row-reverse" as const,
                   borderBottom: "1px solid #ededed",
                   minHeight: 440,
                 }}
               >
-                {/* Illustration */}
                 <div
                   data-illustration={item.illustration}
                   style={{
@@ -111,17 +105,18 @@ export function ServiceCustomDev() {
                     <img
                       src={`/illustrations/${item.illustration}.svg`}
                       alt={item.title}
+                      loading="lazy"
+                      width={400}
+                      height={280}
                       style={{ width: "100%", maxHeight: 280, objectFit: "contain" }}
                     />
                   )}
                 </div>
-
-                {/* Content */}
-                <Stack gap="sm" p="xl" justify="center" style={{ width: "50%", flexShrink: 0, background: "#f9f9f9" }}>
+                <Stack gap="sm" p="xs" justify="center" style={{ width: "50%", flexShrink: 0, background: "#f9f9f9" }}>
                   <Text fz="xs" fw={600} c="#fa5d19" ff="monospace">
                     0{i + 1}
                   </Text>
-                  <GlitchTitle fz={26}>{item.title}</GlitchTitle>
+                  <GlitchTitle fz={26} as="h3">{item.title}</GlitchTitle>
                   <Text fz="sm" c="#737373" lh={1.6}>
                     {item.description}
                   </Text>
@@ -142,6 +137,7 @@ export function ServiceCustomDev() {
                     ))}
                   </Group>
                 </Stack>
+                <BottomCrosses />
               </Box>
             </ScrollReveal>
           );

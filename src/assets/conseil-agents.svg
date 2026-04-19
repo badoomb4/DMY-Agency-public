@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" width="700" height="340">
+  <defs>
+    <filter id="dot-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Arrow: Demande → Assistant IA -->
+  <g id="arrow-1" opacity="0">
+    <path class="arrow-path" d="M 150 170 L 228 170" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 225 166 L 233 170 L 225 174" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Divergence arrows: Assistant IA → destinations -->
+  <g id="arrow-out-1" opacity="0">
+    <path class="arrow-path" d="M 370 145 L 468 48" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 464 44 L 473 46 L 467 54" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="arrow-out-2" opacity="0">
+    <path class="arrow-path" d="M 370 155 L 468 112" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 465 108 L 473 110 L 466 117" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="arrow-out-3" opacity="0">
+    <path class="arrow-path" d="M 370 170 L 468 170" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 465 166 L 473 170 L 465 174" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="arrow-out-4" opacity="0">
+    <path class="arrow-path" d="M 370 185 L 468 228" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 466 223 L 473 230 L 465 232" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="arrow-out-5" opacity="0">
+    <path class="arrow-path" d="M 370 195 L 468 292" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 464 288 L 473 294 L 466 296" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Interconnections between destinations (dashed) -->
+  <g id="link-1-2" opacity="0">
+    <line x1="585" y1="70" x2="585" y2="88" stroke="#ededed" stroke-width="1.2" stroke-dasharray="3 2"/>
+  </g>
+  <g id="link-2-3" opacity="0">
+    <line x1="585" y1="134" x2="585" y2="148" stroke="#ededed" stroke-width="1.2" stroke-dasharray="3 2"/>
+  </g>
+  <g id="link-3-4" opacity="0">
+    <line x1="585" y1="198" x2="585" y2="212" stroke="#ededed" stroke-width="1.2" stroke-dasharray="3 2"/>
+  </g>
+  <g id="link-4-5" opacity="0">
+    <line x1="585" y1="262" x2="585" y2="276" stroke="#ededed" stroke-width="1.2" stroke-dasharray="3 2"/>
+  </g>
+
+  <!-- NODE: Demande -->
+  <g id="node-demande" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="38" y="138" width="110" height="64" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <!-- Chat bubble icon -->
+    <rect x="72" y="148" width="24" height="18" rx="4" stroke="#737373" stroke-width="1.3" fill="none"/>
+    <path d="M 82 166 L 78 172 L 86 166" stroke="#737373" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+    <text x="93" y="185" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="11" font-weight="500" fill="#333">Votre demande</text>
+  </g>
+
+  <!-- NODE: Assistant IA (central, highlighted) -->
+  <g id="node-assistant" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="235" y="130" width="132" height="80" rx="10" fill="white" stroke="#fa5d19" stroke-width="2"/>
+    <!-- Brain/AI icon -->
+    <circle cx="301" cy="158" r="12" stroke="#fa5d19" stroke-width="1.5" fill="none"/>
+    <path d="M 295 155 Q 297 149 301 149 Q 305 149 307 155" stroke="#fa5d19" stroke-width="1.2" fill="none"/>
+    <path d="M 295 161 Q 297 167 301 167 Q 305 167 307 161" stroke="#fa5d19" stroke-width="1.2" fill="none"/>
+    <line x1="301" y1="149" x2="301" y2="167" stroke="#fa5d19" stroke-width="0.8"/>
+    <text x="301" y="192" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="600" fill="#fa5d19">Assistant IA</text>
+  </g>
+
+  <!-- DEST 1: WordPress -->
+  <g id="node-dest-1" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="475" y="14" width="100" height="56" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/wordpress-color-svgrepo-com.svg" x="500" y="20" width="22" height="22"/>
+    <text x="540" y="50" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">WordPress</text>
+  </g>
+
+  <!-- DEST 2: Shopify -->
+  <g id="node-dest-2" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="475" y="78" width="100" height="56" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/shopify-color-svgrepo-com.svg" x="500" y="84" width="22" height="22"/>
+    <text x="540" y="118" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">Shopify</text>
+  </g>
+
+  <!-- DEST 3: Amazon -->
+  <g id="node-dest-3" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="475" y="148" width="100" height="50" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/amazon-color-svgrepo-com.svg" x="500" y="152" width="22" height="22"/>
+    <text x="540" y="184" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">Amazon</text>
+  </g>
+
+  <!-- DEST 4: Airbnb -->
+  <g id="node-dest-4" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="475" y="212" width="100" height="50" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/airbnb-color-svgrepo-com.svg" x="500" y="218" width="22" height="22"/>
+    <text x="540" y="248" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="10" font-weight="500" fill="#333">Airbnb</text>
+  </g>
+
+  <!-- DEST 5: Système interne -->
+  <g id="node-dest-5" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="475" y="276" width="100" height="56" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <!-- Server icon -->
+    <rect x="502" y="283" width="22" height="9" rx="2" stroke="#737373" stroke-width="1.2" fill="none"/>
+    <rect x="502" y="294" width="22" height="9" rx="2" stroke="#737373" stroke-width="1.2" fill="none"/>
+    <circle cx="519" cy="287.5" r="1.3" fill="#737373"/>
+    <circle cx="519" cy="298.5" r="1.3" fill="#737373"/>
+    <text x="525" y="320" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#333">Système interne</text>
+  </g>
+
+  <circle id="dot-pulse" r="4" fill="#fa5d19" opacity="0" filter="url(#dot-glow)"/>
+</svg>

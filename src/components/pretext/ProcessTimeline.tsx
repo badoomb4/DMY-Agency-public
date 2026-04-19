@@ -1,37 +1,62 @@
-import processTimelineSvg from "../../assets/process-timeline.svg?raw";
-import { useExcalidrawFlow } from "./useExcalidrawFlow";
-import { runEntrance, showAllElements, type EntranceStep } from "./excalidrawEntrance";
-import { startDotLoop } from "./excalidrawDotLoop";
+import { SimpleGrid, Box, Text, Title } from "@mantine/core";
+import { ScrollReveal } from "../ScrollReveal";
+import { ProcessStepDetail } from "./ProcessStepDetail";
+import type { Step } from "./processData";
 
-const SEQUENCE: EntranceStep[] = [
-  { selector: "#timeline-line", delay: 0, type: "line" },
-  { selector: "#milestone-1", delay: 200, type: "node" },
-  { selector: "#step-1", delay: 300, type: "group" },
-  { selector: "#milestone-2", delay: 400, type: "node" },
-  { selector: "#step-2", delay: 500, type: "group" },
-  { selector: "#milestone-3", delay: 600, type: "node" },
-  { selector: "#step-3", delay: 700, type: "group" },
-  { selector: "#milestone-4", delay: 800, type: "node" },
-  { selector: "#step-4", delay: 900, type: "group" },
-];
+interface Props {
+  steps: Step[];
+}
 
-export function ProcessTimeline() {
-  const { containerProps } = useExcalidrawFlow(
-    processTimelineSvg,
-    (el) => runEntrance(el, SEQUENCE),
-    (el) => startDotLoop(el, {
-      linearPathIds: ["#timeline-line"],
-      forkPathIds: [],
-      milestoneIds: ["#milestone-1", "#milestone-2", "#milestone-3", "#milestone-4"],
-    }),
-    (el) => showAllElements(el, '[id^="milestone-"], [id^="step-"], #timeline-line'),
-  );
-
+export function ProcessTimeline({ steps }: Props) {
   return (
-    <div
-      {...containerProps}
-      role="img"
-      aria-label="Process en 4 etapes : Decouverte, Strategie, Execution, Livraison"
-    />
+    <SimpleGrid cols={{ base: 1, sm: 2, md: steps.length }} spacing="lg">
+      {steps.map((step, i) => (
+        <ScrollReveal key={step.number} delay={i * 150} direction="up">
+          <Box
+            p="xl"
+            style={{
+              background: "#ffffff",
+              border: "1px solid #ededed",
+              borderRadius: 12,
+              height: "100%",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            {/* Large background step number */}
+            <Text
+              ff="monospace" fw={800}
+              style={{
+                position: "absolute", top: -8, right: 12,
+                fontSize: 72, lineHeight: 1,
+                color: "rgba(250, 93, 25, 0.06)",
+                userSelect: "none", pointerEvents: "none",
+              }}
+            >
+              {step.number}
+            </Text>
+
+            {/* Icon badge */}
+            <Box style={{
+              width: 48, height: 48, borderRadius: 10,
+              background: "rgba(250, 93, 25, 0.08)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              color: "#fa5d19", marginBottom: 16,
+            }}>
+              {step.icon}
+            </Box>
+
+            <Title order={4} fz={20} c="#262626" style={{ letterSpacing: "-0.5px" }}>
+              {step.title}
+            </Title>
+            <Text fz="sm" c="#737373" mt={8} lh={1.6}>
+              {step.description}
+            </Text>
+
+            <ProcessStepDetail actions={step.actions} livrables={step.livrables} />
+          </Box>
+        </ScrollReveal>
+      ))}
+    </SimpleGrid>
   );
 }

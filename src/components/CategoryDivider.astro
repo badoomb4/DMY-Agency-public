@@ -1,0 +1,38 @@
+---
+// Pure CSS category divider — no JS needed
+---
+<div class="cat-divider">
+  <div class="cat-divider-inner">
+    <span class="cross cross-l"></span>
+    <span class="cross cross-r"></span>
+  </div>
+</div>
+
+<style>
+  .cat-divider {
+    position: relative;
+    height: 0;
+    border-top: 2px dashed #cececeff;
+  }
+  .cat-divider-inner {
+    position: relative;
+    height: 0;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .cross {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    background:
+      linear-gradient(#fa5d19, #fa5d19) center / 1px 100% no-repeat,
+      linear-gradient(#fa5d19, #fa5d19) center / 100% 1px no-repeat;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .cross-l { left: 0; }
+  .cross-r { left: 100%; }
+</style>

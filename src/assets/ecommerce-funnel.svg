@@ -35,9 +35,9 @@
     <text x="255" y="76" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="14" font-weight="700" fill="#EA4335">G</text>
     <!-- Instagram -->
     <rect x="275" y="56" width="28" height="28" rx="6" fill="#E4405F" opacity="0.1"/>
-    <rect x="283" y="62" width="12" height="12" rx="3" stroke="#E4405F" stroke-width="1.5" fill="none"/>
-    <circle cx="289" cy="68" r="2.5" stroke="#E4405F" stroke-width="1.5" fill="none"/>
-    <circle cx="296" cy="63" r="1" fill="#E4405F"/>
+    <rect x="283" y="64" width="12" height="12" rx="3" stroke="#E4405F" stroke-width="1.5" fill="none"/>
+    <circle cx="289" cy="70" r="2.5" stroke="#E4405F" stroke-width="1.5" fill="none"/>
+    <circle cx="296" cy="65" r="1" fill="#E4405F"/>
     <!-- X (Twitter) -->
     <rect x="309" y="56" width="28" height="28" rx="6" fill="#000" opacity="0.06"/>
     <text x="323" y="76" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="14" font-weight="700" fill="#333">𝕏</text>

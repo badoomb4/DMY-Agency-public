@@ -1,41 +1,60 @@
 ---
-import { LandingPage } from "../components/LandingPage";
+import Layout from "../layouts/Layout.astro";
+import CategoryDivider from "../components/CategoryDivider.astro";
+import { Navbar } from "../components/layout/Navbar";
+import { Footer } from "../components/layout/Footer";
+import { Hero } from "../components/sections/Hero";
+import { Services } from "../components/sections/Services";
+import { Process } from "../components/sections/Process";
+import { Pricing } from "../components/sections/Pricing";
+import { Faq } from "../components/sections/Faq";
+import { CtaFinal } from "../components/sections/CtaFinal";
 ---
 
-<html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="DMY — Développement sur mesure et conseil en intelligence artificielle." />
-		<title>DMY — Services informatiques vitaminés à l'IA</title>
-		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-		<link href="https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin.css" rel="stylesheet" />
-		<link href="https://cdn.jsdelivr.net/fontsource/fonts/geist-mono@latest/latin.css" rel="stylesheet" />
-		<style is:global>
-			*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-			html { scroll-behavior: smooth; }
-			body {
-				background: #f9f9f9;
-				color: #262626;
-				font-family: 'Geist', system-ui, -apple-system, sans-serif;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-			}
-			@font-face {
-				font-family: 'Virgil';
-				src: url('/fonts/Virgil.woff2') format('woff2');
-				font-display: swap;
-			}
-			@keyframes fadeSlideIn {
-				from { opacity: 0; transform: translateY(8px); }
-				to { opacity: 1; transform: translateY(0); }
-			}
-		</style>
-	</head>
-	<body>
-		<LandingPage client:load />
-	</body>
-</html>
+<Layout
+  title="DMY — Développement sur mesure & Conseil en Intelligence Artificielle"
+  description="DMY conçoit vos applications web, mobiles, bots et automatisations sur mesure. Conseil en IA, intégration d'agents intelligents et formation équipes. Devis gratuit."
+  canonicalPath="/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DMY",
+      "url": "https://dmy.fr",
+      "description": "Services informatiques sur mesure et conseil en intelligence artificielle.",
+      "telephone": "+33674305067",
+      "areaServed": "Europe",
+      "knowsLanguage": ["fr", "en"],
+      "serviceType": ["Développement web", "Développement mobile", "Conseil IA", "Automatisation", "Chatbots"]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Quels types de projets réalisez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Applications web et mobiles, APIs, automatisations, intégrations IA (chatbots, agents, pipelines NLP), audits techniques et accompagnement stratégique." }},
+        { "@type": "Question", "name": "Combien coûte un projet type ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque projet est unique. On établit un devis détaillé après un premier échange gratuit. Nos projets démarrent généralement à partir de 5 000€." }},
+        { "@type": "Question", "name": "Quels sont vos délais de livraison ?", "acceptedAnswer": { "@type": "Answer", "text": "Un MVP prend entre 4 et 8 semaines. Les projets plus complexes sont livrés par itérations de 2 semaines avec des démos régulières." }},
+        { "@type": "Question", "name": "Travaillez-vous avec des entreprises hors de France ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, nous travaillons avec des clients dans toute l'Europe. Nos échanges se font en français et en anglais." }},
+        { "@type": "Question", "name": "Proposez-vous du support après livraison ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque offre inclut une période de support. Au-delà, nous proposons des contrats de maintenance adaptés à vos besoins." }},
+        { "@type": "Question", "name": "Quelles technologies utilisez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "React, Next.js, Astro, Node.js, Python, Supabase, PostgreSQL, et les principales APIs d'IA (OpenAI, Anthropic, etc.). On choisit la stack adaptée au projet." }}
+      ]
+    })} />
+  </Fragment>
+
+  <Navbar client:load />
+  <main>
+    <Hero client:load />
+    <CategoryDivider />
+    <Services client:visible />
+    <CategoryDivider />
+    <Process client:visible />
+    <CategoryDivider />
+    <Pricing client:visible />
+    <CategoryDivider />
+    <Faq client:visible />
+    <CategoryDivider />
+    <CtaFinal client:visible />
+  </main>
+  <Footer client:visible />
+</Layout>

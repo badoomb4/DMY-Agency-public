@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" width="700" height="280">
+  <defs>
+    <filter id="dot-glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main flow arrows -->
+  <g id="arrow-1" opacity="0">
+    <path class="arrow-path" d="M 188 140 L 256 140" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 253 136 L 261 140 L 253 144" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="arrow-2" opacity="0">
+    <path class="arrow-path" d="M 430 140 L 498 140" stroke="#d4d4d4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M 495 136 L 503 140 L 495 144" fill="none" stroke="#d4d4d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Arrows from tools to Pratique -->
+  <g id="arrow-tool-1" opacity="0">
+    <path class="arrow-path" d="M 345 80 L 345 108" stroke="#ededed" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="arrow-tool-2" opacity="0">
+    <path class="arrow-path" d="M 345 200 L 345 172" stroke="#ededed" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- NODE 1: Découverte -->
+  <g id="node-decouverte" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="48" y="108" width="138" height="64" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <!-- Book icon -->
+    <path d="M 100 120 L 100 146" stroke="#737373" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M 100 120 Q 90 118 84 122 L 84 146 Q 90 142 100 144" stroke="#737373" stroke-width="1.3" fill="none"/>
+    <path d="M 100 120 Q 110 118 116 122 L 116 146 Q 110 142 100 144" stroke="#737373" stroke-width="1.3" fill="none"/>
+    <text x="117" y="160" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">Découverte</text>
+  </g>
+
+  <!-- NODE 2: Pratique (central, highlighted) -->
+  <g id="node-pratique" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="263" y="108" width="165" height="64" rx="8" fill="white" stroke="#fa5d19" stroke-width="2"/>
+    <!-- Hands-on icon (keyboard) -->
+    <rect x="322" y="122" width="28" height="16" rx="3" stroke="#fa5d19" stroke-width="1.3" fill="none"/>
+    <line x1="328" y1="128" x2="332" y2="128" stroke="#fa5d19" stroke-width="0.8"/>
+    <line x1="336" y1="128" x2="340" y2="128" stroke="#fa5d19" stroke-width="0.8"/>
+    <line x1="330" y1="133" x2="342" y2="133" stroke="#fa5d19" stroke-width="0.8"/>
+    <text x="346" y="160" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="600" fill="#fa5d19">Pratique sur vos outils</text>
+  </g>
+
+  <!-- TOOL 1: Notion (above) -->
+  <g id="node-tool-1" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="282" y="24" width="56" height="54" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/notion-logo-svgrepo-com.svg" x="298" y="30" width="22" height="22"/>
+    <text x="310" y="68" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Notion</text>
+  </g>
+
+  <!-- TOOL 2: Google Drive (above, right) -->
+  <g id="node-tool-2" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="352" y="24" width="56" height="54" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/drive-color-svgrepo-com.svg" x="368" y="30" width="22" height="22"/>
+    <text x="380" y="68" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Drive</text>
+  </g>
+
+  <!-- TOOL 3: Trello (below) -->
+  <g id="node-tool-3" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="315" y="200" width="56" height="54" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <image href="/illustrations/trello-color-svgrepo-com.svg" x="331" y="206" width="22" height="22"/>
+    <text x="343" y="244" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="9" font-weight="500" fill="#737373">Trello</text>
+  </g>
+
+  <!-- NODE 3: Autonomie -->
+  <g id="node-autonomie" opacity="0" style="transform-box: fill-box; transform-origin: center; transform: scale(0.8);">
+    <rect x="505" y="108" width="138" height="64" rx="8" fill="white" stroke="#ededed" stroke-width="1.5"/>
+    <!-- Checkmark star icon -->
+    <circle cx="560" cy="132" r="10" stroke="#22c55e" stroke-width="1.3" fill="none"/>
+    <polyline points="554,132 558,136 566,128" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="574" y="160" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-size="12" font-weight="500" fill="#333">Autonomie</text>
+  </g>
+
+  <circle id="dot-pulse" r="4" fill="#fa5d19" opacity="0" filter="url(#dot-glow)"/>
+</svg>
