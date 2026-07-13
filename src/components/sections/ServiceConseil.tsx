@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Reveal } from "../Reveal";
 import { GlitchTitle } from "../pretext/GlitchTitle";
 import { TopCrosses } from "../pretext/GridCross";
 import { ConseilAudit } from "../pretext/ConseilAudit";
@@ -40,7 +41,7 @@ const pillars: Pillar[] = [
 export function ServiceConseil() {
   return (
     <div className="service-group service-group--conseil">
-      <div data-reveal>
+      <Reveal>
         <div className="split-head">
           <span className="split-emoji" aria-hidden="true">
             🧠
@@ -53,7 +54,7 @@ export function ServiceConseil() {
           L'IA n'est pas une fin en soi — c'est un levier. On vous aide à l'intégrer là où elle
           crée de la valeur, pas là où elle fait joli.
         </p>
-      </div>
+      </Reveal>
 
       <div className="split-block">
         <TopCrosses />

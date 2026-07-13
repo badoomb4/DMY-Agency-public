@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Reveal } from "../Reveal";
 import { GlitchTitle } from "../pretext/GlitchTitle";
 import { TopCrosses } from "../pretext/GridCross";
 import { MonitorPretext } from "../pretext/MonitorPretext";
@@ -56,7 +57,7 @@ const offerings: Offering[] = [
 export function ServiceCustomDev() {
   return (
     <div className="service-group">
-      <div data-reveal>
+      <Reveal>
         <div className="split-head">
           <span className="split-emoji" aria-hidden="true">
             ⚡
@@ -69,7 +70,7 @@ export function ServiceCustomDev() {
           On crée toutes sortes d'applications, bots et systèmes adaptés à votre métier et vos
           contraintes.
         </p>
-      </div>
+      </Reveal>
 
       <div className="split-block">
         <TopCrosses />

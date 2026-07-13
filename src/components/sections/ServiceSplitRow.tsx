@@ -1,4 +1,5 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
+import { Reveal } from "../Reveal";
 import { GlitchTitle } from "../pretext/GlitchTitle";
 import { BottomCrosses } from "../pretext/GridCross";
 
@@ -13,10 +14,9 @@ interface Props {
 /** Bande 50/50 alternée d'une offre (illustration + texte). */
 export function ServiceSplitRow({ index, title, description, tags, media }: Props) {
   return (
-    <div
+    <Reveal
+      delay={index * 60}
       className={index % 2 ? "split-row split-row--reverse" : "split-row"}
-      data-reveal
-      style={{ "--reveal-delay": `${index * 60}ms` } as CSSProperties}
     >
       <div className="split-row__media">{media}</div>
       <div className="split-row__body">
@@ -34,6 +34,6 @@ export function ServiceSplitRow({ index, title, description, tags, media }: Prop
         </div>
       </div>
       <BottomCrosses />
-    </div>
+    </Reveal>
   );
 }

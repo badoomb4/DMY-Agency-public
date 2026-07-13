@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Reveal } from "../Reveal";
 import { GlitchTitle } from "../pretext/GlitchTitle";
 import { ProcessTimeline } from "../pretext/ProcessTimeline";
 import { ProcessSelector } from "../pretext/ProcessSelector";
@@ -11,14 +12,14 @@ export function Process() {
   return (
     <section id="process" style={{ background: "var(--bg)" }}>
       <div className="frame">
-        <div data-reveal>
+        <Reveal>
           <p className="eyebrow">{"// 02 — Process"}</p>
           <GlitchTitle fz="var(--fs-4xl)" as="h2">
             Un process clair, sans surprise.
           </GlitchTitle>
           <p className="process-sub">{active.subtitle}</p>
           <ProcessSelector processes={PROCESSES} activeKey={activeKey} onChange={setActiveKey} />
-        </div>
+        </Reveal>
 
         <ProcessTimeline key={activeKey} activeKey={activeKey} steps={active.steps} />
       </div>
