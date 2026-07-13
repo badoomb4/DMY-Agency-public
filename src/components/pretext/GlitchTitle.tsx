@@ -1,4 +1,5 @@
-import { useState, useRef, useCallback, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useReducedMotion } from "../hooks/useReducedMotion";
 
 const GLITCH_CHARS = "01!@#$%&*+=<>?{}[]~^αβγδπΣΩ∞∂∫λ";
 
@@ -6,18 +7,19 @@ function pickGlitch() {
   return GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]!;
 }
 
-interface Props {
-  children: string;
-  fz?: number;
-  as?: "h1" | "h2" | "h3" | "h4" | "div";
-}
-
-function GlitchChar({ char }: { char: string }) {
+function GlitchChar({ char, enabled }: { char: string; enabled: boolean }) {
   const [display, setDisplay] = useState(char);
   const timerRef = useRef<number | null>(null);
 
+  useEffect(
+    () => () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    },
+    [],
+  );
+
   const onEnter = useCallback(() => {
-    setDisplay(pickGlitch());
+    if (!enabled) return;
     let count = 0;
     function cycle() {
       count++;
@@ -30,8 +32,9 @@ function GlitchChar({ char }: { char: string }) {
       }
     }
     if (timerRef.current) clearTimeout(timerRef.current);
+    setDisplay(pickGlitch());
     timerRef.current = window.setTimeout(cycle, 80);
-  }, [char]);
+  }, [char, enabled]);
 
   const isGlitching = display !== char;
 
@@ -39,9 +42,8 @@ function GlitchChar({ char }: { char: string }) {
     <span
       onMouseEnter={onEnter}
       style={{
-        color: isGlitching ? "#fa5d19" : "inherit",
-        transition: "color 150ms",
-        cursor: "default",
+        color: isGlitching ? "var(--brand)" : "inherit",
+        transition: "color var(--t-fast)",
       }}
     >
       {display}
@@ -49,40 +51,42 @@ function GlitchChar({ char }: { char: string }) {
   );
 }
 
-export function GlitchTitle({ children, fz = 24, as: Tag = "div" }: Props) {
-  // Strip trailing dots/punctuation — the orange square replaces them
-  const text = children.replace(/[.\s]+$/, "");
+interface Props {
+  /** Texte du titre ; `text` est requis depuis Astro (children n'y est pas une string). */
+  children?: string;
+  text?: string;
+  fz?: number | string;
+  as?: "h1" | "h2" | "h3" | "h4" | "div";
+}
+
+export function GlitchTitle({ children, text: textProp, fz = "var(--fs-2xl)", as: Tag = "div" }: Props) {
+  const reduced = useReducedMotion();
+  const source = textProp ?? (typeof children === "string" ? children : "");
+  // La ponctuation finale est remplacée par le carré orange.
+  const text = source.replace(/[.\s]+$/, "");
 
   const rendered: ReactNode[] = text.split("").map((char, i) => {
     if (char === " ") return <span key={i}> </span>;
-    return <GlitchChar key={i} char={char} />;
+    return <GlitchChar key={i} char={char} enabled={!reduced} />;
   });
-
-  // Always append orange square at the end
-  rendered.push(
-    <span key="square" style={{
-      color: "#fa5d19",
-      fontSize: "0.35em",
-      marginLeft: "0.2em",
-    }}>
-      ■
-    </span>,
-  );
 
   return (
     <Tag
+      aria-label={source}
       style={{
         fontSize: fz,
         fontWeight: 700,
-        color: "#262626",
-        letterSpacing: "-0.5px",
-        lineHeight: 1.2,
+        color: "var(--text)",
+        letterSpacing: "var(--ls-title)",
+        lineHeight: "var(--lh-snug)",
         cursor: "default",
-        fontFamily: "'Geist', system-ui, sans-serif",
         margin: 0,
       }}
     >
-      {rendered}
+      <span aria-hidden="true">
+        {rendered}
+        <span style={{ color: "var(--brand)", fontSize: "0.35em", marginLeft: "0.2em" }}>■</span>
+      </span>
     </Tag>
   );
 }

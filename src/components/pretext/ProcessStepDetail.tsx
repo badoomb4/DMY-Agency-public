@@ -39,7 +39,10 @@ export function ProcessStepDetail({ actions, livrables }: Props) {
 
   return (
     <div ref={ref} style={{ marginTop: 16 }}>
-      <svg viewBox={`0 0 200 ${totalH}`} width="100%">
+      <p className="sr-only">
+        Actions : {actions.join(", ")}. Livrables : {livrables.join(", ")}.
+      </p>
+      <svg viewBox={`0 0 200 ${totalH}`} width="100%" aria-hidden="true">
         {/* Background card */}
         <rect x="1" y="1" width="198" height={totalH - 2} rx="8"
           fill="#fafafa" stroke="#ededed" strokeWidth="1" />

@@ -1,0 +1,89 @@
+/* Section Process : onglets (tabs) + cartes d'étapes (React). */
+.process-sub {
+  margin-top: var(--sp-3);
+  max-width: 31rem;
+  font-size: var(--fs-md);
+  color: var(--text-3);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-5);
+}
+.chip {
+  padding: var(--sp-2) var(--sp-5);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease);
+}
+.chip:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.chip[aria-selected="true"] {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+  color: var(--brand-ink);
+}
+
+.steps-grid {
+  display: grid;
+  gap: var(--sp-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+  margin-top: var(--sp-7);
+}
+.step-card {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: var(--sp-6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+}
+.step-card__ghost {
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  font-family: var(--font-mono);
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--brand-ghost);
+  user-select: none;
+  pointer-events: none;
+}
+.step-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--sp-4);
+  border-radius: 10px;
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+.step-card__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  letter-spacing: var(--ls-title);
+  color: var(--text);
+}
+.step-card__desc {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--text-3);
+  line-height: var(--lh-base);
+}

@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Navbar } from "../components/layout/Navbar";
-import { Footer } from "../components/layout/Footer";
-import { CtaFinal } from "../components/sections/CtaFinal";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import CtaFinal from "../components/astro/CtaFinal.astro";
 ---
 
 <Layout
@@ -21,7 +21,7 @@ import { CtaFinal } from "../components/sections/CtaFinal";
     })} />
   </Fragment>
 
-  <Navbar client:load />
+  <Navbar />
   <main id="main">
     <!-- Hero services -->
     <section style="background: #f9f9f9; padding: 120px 0 60px;">
@@ -176,7 +176,7 @@ import { CtaFinal } from "../components/sections/CtaFinal";
     </section>
 
     <!-- CTA -->
-    <CtaFinal client:visible />
+    <CtaFinal />
   </main>
-  <Footer client:visible />
+  <Footer />
 </Layout>

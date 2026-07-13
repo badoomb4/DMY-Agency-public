@@ -1,0 +1,120 @@
+---
+import { Vortex } from "../pretext/Vortex";
+
+const stats = [
+  { value: "50+", label: "Projets livrés" },
+  { value: "98%", label: "Satisfaction" },
+  { value: "24h", label: "Réponse" },
+];
+---
+
+<section id="hero" class="hero">
+  <Vortex client:idle />
+  <div class="container hero-inner">
+    <p class="hero-badge fade-in">
+      <span aria-hidden="true">🚀</span>
+      Services informatiques vitaminés à l'IA
+    </p>
+    <h1 class="fade-in" style="--fade-delay: 100ms">
+      On transforme vos idées en produits qui <em>marchent</em>.
+    </h1>
+    <p class="hero-sub fade-in" style="--fade-delay: 200ms">
+      Développement sur mesure et conseil en intelligence artificielle
+      pour les entreprises qui veulent une longueur d'avance.
+    </p>
+    <div class="hero-cta fade-in" style="--fade-delay: 300ms">
+      <a class="btn btn--dark btn--lg" href="#contact">Démarrer un projet →</a>
+      <a class="btn btn--outline btn--lg" href="#services">Voir nos services</a>
+    </div>
+    <ul class="hero-stats fade-in" style="--fade-delay: 400ms" role="list">
+      {stats.map((stat) => (
+        <li>
+          <span class="stat-value">{stat.value}</span>
+          <span class="stat-label">{stat.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-5);
+    max-width: var(--container-text);
+    padding-block: var(--hero-y);
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: 0.45rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-pill);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--text-3);
+  }
+  h1 {
+    font-size: var(--fs-5xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-display);
+    color: var(--text);
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--brand);
+  }
+  .hero-sub {
+    max-width: 32.5rem;
+    font-size: var(--fs-md);
+    color: var(--text-3);
+  }
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--sp-4);
+    margin-top: var(--sp-2);
+  }
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--sp-7);
+    margin-top: var(--sp-8);
+    list-style: none;
+  }
+  .hero-stats li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-1);
+  }
+  .stat-value {
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    letter-spacing: var(--ls-title);
+    color: var(--text);
+  }
+  .stat-label {
+    font-size: var(--fs-xs);
+    color: var(--text-3);
+  }
+</style>

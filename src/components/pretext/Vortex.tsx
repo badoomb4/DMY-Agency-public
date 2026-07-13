@@ -69,7 +69,8 @@ function createParticle(cfg: VortexConfig): Particle {
 }
 
 interface Props {
-  trackRef: RefObject<HTMLElement | null>;
+  /** Élément qui suit la souris ; à défaut, la <section> parente du canvas. */
+  trackRef?: RefObject<HTMLElement | null>;
 }
 
 export function Vortex({ trackRef }: Props) {
@@ -90,8 +91,10 @@ export function Vortex({ trackRef }: Props) {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const trackEl = trackRef.current;
-    if (!canvas || !trackEl) return;
+    if (!canvas) return;
+    const trackEl: HTMLElement | null =
+      trackRef?.current ?? canvas.closest("section") ?? canvas.parentElement;
+    if (!trackEl) return;
     const ctx = canvas.getContext("2d")!;
     const dpr = window.devicePixelRatio || 1;
     const mouse = { x: -999, y: -999, active: false };

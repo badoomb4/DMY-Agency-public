@@ -6,6 +6,7 @@
   --brand-soft: rgba(250, 93, 25, 0.08);
   --brand-ghost: rgba(250, 93, 25, 0.06);
   --brand-tint: #fdcfb8;
+  --brand-on-dark: #ffa56e; /* orange lisible sur --ink/--text (≥4.5:1) */
 
   /* Neutres — fond clair */
   --ink: #171717;

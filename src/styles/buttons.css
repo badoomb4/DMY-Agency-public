@@ -34,6 +34,14 @@
 .btn--ghost:hover {
   background: var(--border);
 }
+.btn--brand {
+  background: var(--brand);
+  color: var(--ink);
+}
+.btn--brand:hover {
+  background: var(--brand-ink);
+  color: var(--dark-text);
+}
 .btn--outline {
   background: var(--surface);
   border-color: var(--border-strong);

@@ -1,14 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import CategoryDivider from "../components/CategoryDivider.astro";
-import { Navbar } from "../components/layout/Navbar";
-import { Footer } from "../components/layout/Footer";
-import { Hero } from "../components/sections/Hero";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
+import Hero from "../components/astro/Hero.astro";
+import Pricing from "../components/astro/Pricing.astro";
+import Faq from "../components/astro/Faq.astro";
+import CtaFinal from "../components/astro/CtaFinal.astro";
 import { Services } from "../components/sections/Services";
 import { Process } from "../components/sections/Process";
-import { Pricing } from "../components/sections/Pricing";
-import { Faq } from "../components/sections/Faq";
-import { CtaFinal } from "../components/sections/CtaFinal";
+import { faqs } from "../data/faq";
 ---
 
 <Layout
@@ -31,30 +32,27 @@ import { CtaFinal } from "../components/sections/CtaFinal";
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Quels types de projets réalisez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Applications web et mobiles, APIs, automatisations, intégrations IA (chatbots, agents, pipelines NLP), audits techniques et accompagnement stratégique." }},
-        { "@type": "Question", "name": "Combien coûte un projet type ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque projet est unique. On établit un devis détaillé après un premier échange gratuit. Nos projets démarrent généralement à partir de 5 000€." }},
-        { "@type": "Question", "name": "Quels sont vos délais de livraison ?", "acceptedAnswer": { "@type": "Answer", "text": "Un MVP prend entre 4 et 8 semaines. Les projets plus complexes sont livrés par itérations de 2 semaines avec des démos régulières." }},
-        { "@type": "Question", "name": "Travaillez-vous avec des entreprises hors de France ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, nous travaillons avec des clients dans toute l'Europe. Nos échanges se font en français et en anglais." }},
-        { "@type": "Question", "name": "Proposez-vous du support après livraison ?", "acceptedAnswer": { "@type": "Answer", "text": "Chaque offre inclut une période de support. Au-delà, nous proposons des contrats de maintenance adaptés à vos besoins." }},
-        { "@type": "Question", "name": "Quelles technologies utilisez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "React, Next.js, Astro, Node.js, Python, Supabase, PostgreSQL, et les principales APIs d'IA (OpenAI, Anthropic, etc.). On choisit la stack adaptée au projet." }}
-      ]
+      "mainEntity": faqs.map((f) => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+      })),
     })} />
   </Fragment>
 
-  <Navbar client:load />
+  <Navbar />
   <main id="main">
-    <Hero client:load />
+    <Hero />
     <CategoryDivider />
     <Services client:visible />
     <CategoryDivider />
     <Process client:visible />
     <CategoryDivider />
-    <Pricing client:visible />
+    <Pricing />
     <CategoryDivider />
-    <Faq client:visible />
+    <Faq />
     <CategoryDivider />
-    <CtaFinal client:visible />
+    <CtaFinal />
   </main>
-  <Footer client:visible />
+  <Footer />
 </Layout>

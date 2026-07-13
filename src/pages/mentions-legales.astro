@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Navbar } from "../components/layout/Navbar";
-import { Footer } from "../components/layout/Footer";
+import Navbar from "../components/astro/Navbar.astro";
+import Footer from "../components/astro/Footer.astro";
 ---
 
 <Layout
@@ -9,7 +9,7 @@ import { Footer } from "../components/layout/Footer";
   description="Mentions légales du site dmy-agency.com — éditeur, hébergeur, propriété intellectuelle et données personnelles."
   canonicalPath="/mentions-legales"
 >
-  <Navbar client:load />
+  <Navbar />
   <main id="main" style="padding: 120px 0 80px; background: #f9f9f9;">
     <div style="max-width: 700px; margin: 0 auto; padding: 0 24px;">
       <h1 style="font-size: 36px; font-weight: 700; color: #262626; letter-spacing: -1.5px; margin: 0 0 40px;">
@@ -75,5 +75,5 @@ import { Footer } from "../components/layout/Footer";
       </section>
     </div>
   </main>
-  <Footer client:visible />
+  <Footer />
 </Layout>

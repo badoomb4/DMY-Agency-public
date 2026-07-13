@@ -1,0 +1,131 @@
+---
+import { GlitchTitle } from "../pretext/GlitchTitle";
+
+const plans = [
+  {
+    name: "Starter",
+    price: "Sur devis",
+    description: "Pour les projets ciblés et les MVPs.",
+    features: ["Application web ou mobile", "Architecture sur mesure", "3 mois de support inclus", "Livraison itérative"],
+    cta: "Demander un devis",
+    highlighted: false,
+  },
+  {
+    name: "Business",
+    price: "Sur devis",
+    description: "Pour les entreprises avec des enjeux complexes.",
+    features: ["Tout Starter +", "Intégration IA / LLM", "Conseil stratégique inclus", "6 mois de support inclus", "Interlocuteur dédié"],
+    cta: "Discuter du projet",
+    highlighted: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Sur mesure",
+    description: "Pour les grands comptes et les DSI.",
+    features: ["Tout Business +", "Audit complet existant", "Équipe dédiée", "SLA garanti", "Formation équipes", "Support illimité"],
+    cta: "Nous contacter",
+    highlighted: false,
+  },
+];
+---
+
+<section id="pricing" class="pricing">
+  <div class="frame">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">// 03 — Tarifs</p>
+      <GlitchTitle client:visible as="h2" fz="var(--fs-4xl)" text="Une offre adaptée à chaque ambition." />
+    </div>
+
+    <div class="plans">
+      {plans.map((plan, i) => (
+        <article
+          class:list={["plan", { "plan--dark": plan.highlighted }]}
+          data-reveal
+          style={`--reveal-delay: ${i * 150}ms`}
+        >
+          <p class="plan-name">{plan.name}</p>
+          <h3 class="plan-price">{plan.price}</h3>
+          <p class="plan-desc">{plan.description}</p>
+          <ul class="plan-features" role="list">
+            {plan.features.map((f) => <li>{f}</li>)}
+          </ul>
+          <a class:list={["btn", plan.highlighted ? "btn--brand" : "btn--dark"]} href="/#contact">
+            {plan.cta}
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    background: var(--surface);
+  }
+  .plans {
+    display: grid;
+    gap: var(--sp-5);
+    grid-template-columns: repeat(auto-fit, minmax(min(17.5rem, 100%), 1fr));
+  }
+  .plan {
+    display: flex;
+    flex-direction: column;
+    padding: var(--sp-6);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+  }
+  .plan--dark {
+    background: var(--text);
+    border-color: var(--dark-border);
+  }
+  .plan-name {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--text-3);
+  }
+  .plan--dark .plan-name {
+    color: var(--brand-on-dark);
+  }
+  .plan-price {
+    margin-top: var(--sp-2);
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    letter-spacing: var(--ls-title);
+    color: var(--text);
+  }
+  .plan--dark .plan-price {
+    color: var(--dark-text);
+  }
+  .plan-desc {
+    margin-top: var(--sp-1);
+    font-size: var(--fs-sm);
+    color: var(--text-3);
+  }
+  .plan--dark .plan-desc {
+    color: var(--dark-text-2);
+  }
+  .plan-features {
+    margin-block: var(--sp-5) var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    list-style: none;
+    font-size: var(--fs-sm);
+    color: var(--text-2);
+  }
+  .plan--dark .plan-features {
+    color: var(--dark-text);
+  }
+  .plan-features li::before {
+    content: "✓ ";
+    color: var(--brand-ink);
+  }
+  .plan--dark .plan-features li::before {
+    color: var(--brand-on-dark);
+  }
+  .plan .btn {
+    margin-top: auto;
+  }
+</style>

@@ -1,11 +1,10 @@
-import { Text } from "@mantine/core";
-import { MantineProvider } from "../MantineProvider";
-import { ScrollReveal } from "../ScrollReveal";
-import { GlitchTitle } from "../pretext/GlitchTitle";
-import { SectionFrame } from "../pretext/SectionFrame";
-import { PretextAccordion } from "../pretext/PretextAccordion";
+/** Source unique des Q/R — consommée par la section FAQ et le JSON-LD. */
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
 
-const faqs = [
+export const faqs: FaqItem[] = [
   {
     question: "Quels types de projets réalisez-vous ?",
     answer:
@@ -37,28 +36,3 @@ const faqs = [
       "React, Next.js, Astro, Node.js, Python, Supabase, PostgreSQL, et les principales APIs d'IA (OpenAI, Anthropic, etc.). On choisit la stack adaptée au projet.",
   },
 ];
-
-export function Faq() {
-  return (
-    <MantineProvider>
-    <section id="faq" style={{ background: "#f9f9f9" }}>
-      <SectionFrame>
-        <ScrollReveal>
-          <Text fz="sm" fw={600} c="#fa5d19" ff="monospace" ta="center">
-            // 04 — FAQ
-          </Text>
-          <div style={{ marginTop: 4, textAlign: "center" }}>
-            <GlitchTitle fz={44} as="h2">Questions fréquentes.</GlitchTitle>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={150}>
-          <div style={{ marginTop: 50 }}>
-            <PretextAccordion items={faqs} />
-          </div>
-        </ScrollReveal>
-      </SectionFrame>
-    </section>
-    </MantineProvider>
-  );
-}

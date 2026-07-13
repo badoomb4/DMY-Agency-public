@@ -1,0 +1,70 @@
+/* Accordéon FAQ (React) — animation par grid-template-rows, sans mesure JS. */
+.acc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  max-width: 46rem;
+  margin-inline: auto;
+}
+.acc__item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: border-color var(--t-fast) var(--ease);
+}
+.acc__item[data-open] {
+  border-color: var(--border-strong);
+}
+.acc__q {
+  margin: 0;
+  font-size: inherit;
+}
+.acc__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  width: 100%;
+  padding: var(--sp-4) var(--sp-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+}
+.acc__chevron {
+  flex-shrink: 0;
+  color: var(--text-3);
+  font-size: 0.85em;
+  transition: transform 200ms var(--ease);
+}
+.acc__btn[aria-expanded="true"] .acc__chevron {
+  transform: rotate(90deg);
+}
+.acc__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--t-med) var(--ease);
+}
+.acc__item[data-open] .acc__panel {
+  grid-template-rows: 1fr;
+}
+.acc__panel > div {
+  overflow: hidden;
+}
+.acc__answer {
+  padding: 0 var(--sp-5) var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--text-3);
+  line-height: var(--lh-loose);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acc__panel,
+  .acc__chevron {
+    transition: none;
+  }
+}

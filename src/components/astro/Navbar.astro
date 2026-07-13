@@ -1,0 +1,183 @@
+---
+const links = [
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "Tarifs", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+];
+---
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Navigation principale">
+    <a class="logo" href="/">DMY</a>
+
+    <div class="nav-panel" id="nav-menu">
+      <ul class="nav-links">
+        {links.map((link) => (
+          <li><a href={link.href}>{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="nav-cta">
+      <a class="btn btn--ghost" href="/#contact">Contact</a>
+      <a class="btn btn--dark" href="/#contact">Démarrer →</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Menu</span>
+        <span class="burger-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-nav);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    min-height: 3.75rem;
+  }
+  .logo {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    letter-spacing: var(--ls-text);
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-panel {
+    display: contents;
+  }
+  .nav-links {
+    display: flex;
+    gap: var(--sp-6);
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-3);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--t-fast) var(--ease);
+  }
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--text);
+  }
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+  }
+
+  .burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    background: var(--text);
+    border-radius: 1px;
+    transition: transform var(--t-fast) var(--ease), opacity var(--t-fast) var(--ease);
+  }
+  .burger-bar {
+    position: relative;
+  }
+  .burger-bar::before,
+  .burger-bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  .burger-bar::before { top: -6px; }
+  .burger-bar::after { top: 6px; }
+  [data-open] .burger-bar { transform: rotate(45deg); }
+  [data-open] .burger-bar::before { transform: rotate(-90deg) translateX(-6px); }
+  [data-open] .burger-bar::after { opacity: 0; }
+
+  @media (max-width: 47.99em) {
+    .burger { display: inline-flex; }
+    .nav-cta .btn--ghost { display: none; }
+    .nav-panel {
+      position: absolute;
+      inset: 100% 0 auto 0;
+      display: grid;
+      grid-template-rows: 0fr;
+      visibility: hidden;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-2);
+      transition:
+        grid-template-rows var(--t-med) var(--ease),
+        visibility 0s linear var(--t-med);
+    }
+    [data-open] .nav-panel {
+      grid-template-rows: 1fr;
+      visibility: visible;
+      transition: grid-template-rows var(--t-med) var(--ease);
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 0;
+      overflow: hidden;
+      min-height: 0;
+    }
+    .nav-links a {
+      display: block;
+      padding: var(--sp-4) var(--frame-x);
+      font-size: var(--fs-base);
+      border-top: 1px solid var(--border);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .nav-panel { transition: none; }
+    }
+  }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>(".site-header");
+  const btn = header?.querySelector<HTMLButtonElement>(".burger");
+
+  if (header && btn) {
+    const close = () => {
+      header.removeAttribute("data-open");
+      btn.setAttribute("aria-expanded", "false");
+    };
+    const open = () => {
+      header.setAttribute("data-open", "");
+      btn.setAttribute("aria-expanded", "true");
+    };
+    btn.addEventListener("click", () =>
+      header.hasAttribute("data-open") ? close() : open(),
+    );
+    header.addEventListener("click", (e) => {
+      if ((e.target as Element).closest(".nav-links a")) close();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+    document.addEventListener("click", (e) => {
+      if (header.hasAttribute("data-open") && !header.contains(e.target as Node)) close();
+    });
+    window.matchMedia("(min-width: 48em)").addEventListener("change", (e) => {
+      if (e.matches) close();
+    });
+  }
+</script>

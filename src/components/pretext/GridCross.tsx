@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 
 const CROSS_SIZE = 9;
 const CROSS_THICKNESS = 1;
-const CROSS_COLOR = "#fa5d19";
+const CROSS_COLOR = "var(--brand)";
 
 interface CrossMarkProps {
   left: string | number;
@@ -15,6 +15,7 @@ export function CrossMark({ left, top, bottom, style }: CrossMarkProps) {
   const isTop = top !== undefined;
   return (
     <div
+      aria-hidden="true"
       style={{
         position: "absolute",
         left,

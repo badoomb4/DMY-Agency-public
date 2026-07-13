@@ -1,0 +1,117 @@
+---
+const year = new Date().getFullYear();
+
+const groups = [
+  {
+    title: "Services",
+    links: [
+      { label: "Développement", href: "/services#developpement" },
+      { label: "Conseil IA", href: "/services#conseil-ia" },
+      { label: "Automatisation", href: "/services#automatisation" },
+    ],
+  },
+  {
+    title: "Entreprise",
+    links: [
+      { label: "Contact", href: "/#contact" },
+      { label: "Mentions légales", href: "/mentions-legales" },
+    ],
+  },
+  {
+    title: "Ressources",
+    links: [{ label: "FAQ", href: "/#faq" }],
+  },
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="cols">
+      <div class="brand">
+        <p class="logo">DMY</p>
+        <p class="tagline">Services informatiques vitaminés à l'IA.</p>
+      </div>
+
+      <nav class="links" aria-label="Pied de page">
+        {groups.map((group) => (
+          <div class="col">
+            <p class="col-title">{group.title}</p>
+            <ul>
+              {group.links.map((link) => (
+                <li><a href={link.href}>{link.label}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </nav>
+    </div>
+
+    <p class="copy">© {year} DMY. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--ink);
+    border-top: 1px solid var(--dark-border);
+    padding-block: var(--sp-8) var(--sp-6);
+  }
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--sp-7);
+  }
+  .brand {
+    max-width: 15.625rem;
+  }
+  .logo {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    letter-spacing: var(--ls-text);
+    color: var(--dark-text);
+  }
+  .tagline {
+    margin-top: var(--sp-2);
+    font-size: var(--fs-sm);
+    color: var(--dark-text-2);
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-7);
+  }
+  .col-title {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    color: var(--dark-text-2);
+  }
+  .col ul {
+    margin-top: var(--sp-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    list-style: none;
+  }
+  .col a {
+    font-size: var(--fs-sm);
+    color: var(--dark-text-2);
+    text-decoration: none;
+    transition: color var(--t-fast) var(--ease);
+  }
+  .col a:hover,
+  .col a:focus-visible {
+    color: var(--dark-text);
+  }
+  .copy {
+    margin-top: var(--sp-7);
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--dark-border);
+    text-align: center;
+    font-size: var(--fs-xs);
+    color: var(--dark-text-2);
+  }
+</style>

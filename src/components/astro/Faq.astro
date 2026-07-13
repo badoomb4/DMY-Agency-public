@@ -1,0 +1,28 @@
+---
+import { GlitchTitle } from "../pretext/GlitchTitle";
+import { Accordion } from "../pretext/Accordion";
+import { faqs } from "../../data/faq";
+---
+
+<section id="faq" class="faq">
+  <div class="frame">
+    <div class="section-head section-head--center" data-reveal>
+      <p class="eyebrow">// 04 — FAQ</p>
+      <GlitchTitle client:visible as="h2" fz="var(--fs-4xl)" text="Questions fréquentes." />
+    </div>
+
+    <div data-reveal style="--reveal-delay: 150ms">
+      <Accordion client:visible items={faqs} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    background: var(--bg);
+  }
+  .section-head--center {
+    align-items: center;
+    text-align: center;
+  }
+</style>
