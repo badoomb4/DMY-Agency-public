@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { prepareWithSegments } from "@chenglou/pretext";
+import { startCanvasLoop } from "../hooks/canvasLoop";
 
 const FONT_SIZE = 4;
 const FONT = `700 ${FONT_SIZE}px 'Geist Mono', monospace`;
@@ -95,12 +96,12 @@ export function ScrollingLogos({ logos }: Props) {
     resize();
     window.addEventListener("resize", resize);
 
-    let raf: number, frame = 0, offsetX = 0;
+    let frame = 0, offsetX = 0;
     const totalW = logos.length * LOGO_SIZE + (logos.length - 1) * GAP + GAP;
 
     function render() {
       frame++;
-      if (loaded < logos.length) { raf = requestAnimationFrame(render); return; }
+      if (loaded < logos.length) return;
 
       const rect = canvas!.getBoundingClientRect();
       const w = rect.width, h = rect.height;
@@ -138,17 +139,17 @@ export function ScrollingLogos({ logos }: Props) {
       }
 
       ctx.globalAlpha = 1;
-      raf = requestAnimationFrame(render);
     }
-    raf = requestAnimationFrame(render);
+
+    const stopLoop = startCanvasLoop(canvas, { draw: render });
     return () => {
-      cancelAnimationFrame(raf);
+      stopLoop();
       window.removeEventListener("resize", resize);
     };
   }, [logos]);
 
   return (
-    <canvas ref={canvasRef} style={{
+    <canvas ref={canvasRef} aria-hidden="true" style={{
       position: "absolute", inset: 0,
       width: "100%", height: "100%",
       pointerEvents: "none",

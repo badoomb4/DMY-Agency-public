@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BotBackground } from "./BotBackground";
+import { createVisibilityObserver } from "./excalidrawObserver";
+import { useReducedMotion } from "../hooks/useReducedMotion";
 
 const PLATFORMS = [
   { name: "Bot Telegram", color: "#0088cc", colorDark: "#006699", colorLight: "#b8dff5" },
@@ -28,11 +30,27 @@ export function BotChat() {
   const [platformIdx, setPlatformIdx] = useState(0);
   const [count, setCount] = useState(0);
   const [fading, setFading] = useState(false);
+  const [inView, setInView] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
 
   const platform = PLATFORMS[platformIdx];
   const messages = ALL_CONVOS[platformIdx];
 
   useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    return createVisibilityObserver(el, () => setInView(true), () => setInView(false));
+  }, []);
+
+  useEffect(() => {
+    // Reduced-motion : conversation complète, statique, sans rotation.
+    if (reduced) {
+      setFading(false);
+      setCount(messages.length);
+      return;
+    }
+    if (!inView) return;
     let timers: number[] = [];
     function cycle() {
       timers.forEach(clearTimeout);
@@ -53,14 +71,15 @@ export function BotChat() {
     }
     cycle();
     return () => timers.forEach(clearTimeout);
-  }, [platformIdx]);
+  }, [platformIdx, inView, reduced, messages]);
 
   return (
-    <div style={{ width: "100%", height: "100%", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
+    <div ref={rootRef} style={{ width: "100%", height: "100%", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
       <BotBackground />
       <style>{`
         .bot-msg{opacity:0;animation:botFade .3s ease forwards}
         @keyframes botFade{to{opacity:1}}
+        @media (prefers-reduced-motion: reduce){.bot-msg{animation:none;opacity:1}}
       `}</style>
       <div style={{ position: "relative", zIndex: 1, width: "100%", transform: "rotate(0deg)", transformOrigin: "center center" }}>
         <img
