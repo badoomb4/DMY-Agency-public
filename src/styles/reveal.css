@@ -1,0 +1,23 @@
+/* Apparition au scroll : [data-reveal] + attribut data-in posé par reveal.js.
+   Attribut (pas une classe) : les îlots React SSR écraseraient une classe
+   divergente à l'hydratation. Sans JS (html.no-js), tout reste visible. */
+html:not(.no-js) [data-reveal]:not([data-in]) {
+  opacity: 0;
+  transform: translateY(24px);
+}
+[data-reveal] {
+  transition:
+    opacity var(--t-reveal) var(--ease-out),
+    transform var(--t-reveal) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:not(.no-js) [data-reveal]:not([data-in]) {
+    opacity: 1;
+    transform: none;
+  }
+  [data-reveal] {
+    transition: none;
+  }
+}

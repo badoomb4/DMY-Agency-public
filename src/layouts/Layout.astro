@@ -1,22 +1,34 @@
 ---
+import "../styles/tokens.css";
+import "../styles/fonts.css";
+import "../styles/base.css";
+import "../styles/layout.css";
+import "../styles/buttons.css";
+import "../styles/reveal.css";
+
 interface Props {
   title: string;
   description: string;
   canonicalPath?: string;
+  ogImage?: string;
 }
 
-const { title, description, canonicalPath = "/" } = Astro.props;
+const { title, description, canonicalPath = "/", ogImage = "/og-image.png" } = Astro.props;
 const siteUrl = "https://dmy-agency.com";
 const canonical = `${siteUrl}${canonicalPath}`;
+const ogImageUrl = `${siteUrl}${ogImage}`;
 ---
 
-<html lang="fr">
+<html lang="fr" class="no-js">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      document.documentElement.classList.remove("no-js");
+    </script>
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -28,41 +40,24 @@ const canonical = `${siteUrl}${canonicalPath}`;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="DMY" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DMY — Développement sur mesure & Conseil en Intelligence Artificielle" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <slot name="head" />
 
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="preload" href="https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link href="https://cdn.jsdelivr.net/fontsource/fonts/geist-sans@latest/latin.css" rel="stylesheet" /></noscript>
-    <link rel="preload" href="https://cdn.jsdelivr.net/fontsource/fonts/geist-mono@latest/latin.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link href="https://cdn.jsdelivr.net/fontsource/fonts/geist-mono@latest/latin.css" rel="stylesheet" /></noscript>
-
-    <style is:global>
-      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        background: #f9f9f9;
-        color: #262626;
-        font-family: 'Geist', system-ui, -apple-system, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      @font-face {
-        font-family: 'Virgil';
-        src: url('/fonts/Virgil.woff2') format('woff2');
-        font-display: swap;
-      }
-      @keyframes fadeSlideIn {
-        from { opacity: 0; transform: translateY(8px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-    </style>
+    <link rel="preload" href="/fonts/geist-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/geist-sans-latin-700.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
     <slot />
+    <script src="../scripts/reveal.js"></script>
   </body>
 </html>

@@ -1,0 +1,91 @@
+/* Design tokens — source de vérité. Aucune couleur/taille en dur ailleurs. */
+:root {
+  /* Marque */
+  --brand: #fa5d19;
+  --brand-ink: #c2410c; /* orange texte petit : 4.7:1 sur --bg */
+  --brand-soft: rgba(250, 93, 25, 0.08);
+  --brand-ghost: rgba(250, 93, 25, 0.06);
+  --brand-tint: #fdcfb8;
+
+  /* Neutres — fond clair */
+  --ink: #171717;
+  --text: #262626;
+  --text-2: #525252;
+  --text-3: #737373; /* minimum AA sur --bg : jamais plus clair en texte */
+  --border: #ededed;
+  --border-strong: #d4d4d4;
+  --surface: #ffffff;
+  --bg: #f9f9f9;
+
+  /* Neutres — sur fond sombre (--ink / --text) */
+  --dark-text: #f5f5f5;
+  --dark-text-2: #a3a3a3; /* 6.6:1 sur --ink */
+  --dark-border: #2e2e2e;
+
+  /* Typographie */
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  --fs-2xs: 0.6875rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: clamp(0.8125rem, 0.79rem + 0.15vw, 0.875rem);
+  --fs-base: clamp(0.9375rem, 0.9rem + 0.25vw, 1rem);
+  --fs-md: clamp(1rem, 0.94rem + 0.3vw, 1.125rem);
+  --fs-lg: clamp(1.125rem, 1.06rem + 0.35vw, 1.25rem);
+  --fs-xl: clamp(1.25rem, 1.13rem + 0.6vw, 1.5rem);
+  --fs-2xl: clamp(1.5rem, 1.35rem + 0.8vw, 1.75rem);
+  --fs-3xl: clamp(1.75rem, 1.5rem + 1.3vw, 2.25rem);
+  --fs-4xl: clamp(2rem, 1.55rem + 2.2vw, 2.75rem);
+  --fs-5xl: clamp(2.375rem, 1.7rem + 3.4vw, 4rem);
+  --fs-tel: clamp(1.75rem, 1.1rem + 3.6vw, 3rem);
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.2;
+  --lh-base: 1.6;
+  --lh-loose: 1.7;
+
+  --ls-display: -0.035em;
+  --ls-title: -0.02em;
+  --ls-text: -0.01em;
+  --ls-caps: 0.08em;
+
+  /* Espacement */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  /* Rythme et conteneurs */
+  --section-y: clamp(3rem, 2rem + 4vw, 5rem);
+  --hero-y: clamp(4.5rem, 3rem + 7vw, 7.5rem);
+  --frame-x: clamp(1rem, 0.4rem + 3vw, 2.5rem);
+  --container: 82.5rem; /* 1320px — largeur unique du site */
+  --container-text: 56.25rem;
+  --container-prose: 43.75rem;
+
+  /* Radius : boutons/accordéon = md, cartes = lg */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-pill: 999px;
+
+  /* Élévation */
+  --shadow-1: 0 1px 3px rgb(23 23 23 / 0.06);
+  --shadow-2: 0 2px 12px rgb(23 23 23 / 0.08);
+  --shadow-3: 0 8px 32px rgb(23 23 23 / 0.14);
+
+  /* Mouvement */
+  --t-fast: 150ms;
+  --t-med: 300ms;
+  --t-reveal: 600ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --z-nav: 100;
+  --z-skip: 200;
+}

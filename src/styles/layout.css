@@ -1,0 +1,52 @@
+/* Primitives de mise en page. */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--frame-x);
+}
+.container--text {
+  max-width: var(--container-text);
+}
+.container--prose {
+  max-width: var(--container-prose);
+}
+
+/* Cadre de section : bordures latérales grises + rythme vertical unique. */
+.frame {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: var(--section-y) var(--frame-x);
+  border-inline: 1px solid var(--border);
+}
+
+/* En-tête de section : eyebrow + titre glitch + intro. */
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-7);
+}
+.section-head .intro {
+  max-width: 36rem;
+  font-size: var(--fs-md);
+  color: var(--text-3);
+}
+
+/* Cartes */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+}
+.card--dark {
+  background: var(--text);
+  border-color: var(--dark-border);
+  color: var(--dark-text);
+}
+.cards-grid {
+  display: grid;
+  gap: var(--sp-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(17.5rem, 100%), 1fr));
+}
