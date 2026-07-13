@@ -3,6 +3,60 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
 import CtaFinal from "../components/astro/CtaFinal.astro";
+import ServiceCardGrid from "../components/astro/ServiceCardGrid.astro";
+
+const dev = [
+  {
+    title: "Applications Web",
+    text: "SaaS, dashboards analytics, portails clients, back-offices. Architecture React/Next.js, interfaces réactives, déploiement continu. Vos utilisateurs accèdent à un produit fiable depuis n'importe quel navigateur.",
+    stack: "React · Next.js · Astro · Supabase",
+  },
+  {
+    title: "Applications Mobile",
+    text: "Une seule codebase, deux plateformes. Applications iOS et Android cross-platform avec expérience native : notifications push, mode hors-ligne, performances fluides. De l'idée au store en quelques semaines.",
+    stack: "React Native · Expo · Flutter · Firebase",
+  },
+  {
+    title: "Bots Telegram & WhatsApp",
+    text: "Transformez vos canaux de messagerie en véritables outils métier. Gestion de commandes, notifications, pilotage CRM et réponses clients 24h/24 — avec ou sans IA embarquée.",
+    stack: "Telegram · WhatsApp · LLM · Webhooks",
+  },
+  {
+    title: "Sites Vitrines & E-commerce",
+    text: "Sites rapides, accessibles et optimisés pour le référencement. Vitrine corporate, landing pages de conversion ou boutique en ligne complète — stack adaptée à votre budget.",
+    stack: "Astro · Shopify · Stripe · SEO · CMS",
+  },
+];
+
+const automatisation = [
+  {
+    title: "Workflows automatisés",
+    text: "Connexion de vos outils existants (CRM, ERP, Google Workspace, Notion, Slack) via des pipelines sur mesure. Déclenchement par événements, planification cron, ou appels API.",
+  },
+  {
+    title: "Scraping & Data pipelines",
+    text: "Collecte, nettoyage et structuration de données depuis n'importe quelle source. Alimentation automatique de vos bases, tableaux de bord et outils de reporting.",
+  },
+  {
+    title: "Alertes & Monitoring",
+    text: "Surveillance de vos processus critiques avec notifications en temps réel. Détection d'anomalies, rapports automatiques et escalade intelligente.",
+  },
+];
+
+const conseil = [
+  {
+    title: "Audit & Stratégie IA",
+    text: "Cartographie de vos processus, données et points de friction. Identification des cas d'usage IA à fort ROI et construction d'une feuille de route réaliste — pas de buzzwords, que du concret avec des résultats mesurables à 3 mois.",
+  },
+  {
+    title: "Agents IA connectés",
+    text: "Déploiement d'assistants IA connectés à vos plateformes. Vos équipes gagnent du temps, vos clients obtiennent des réponses instantanées — sécurisé et intégré à votre écosystème existant.",
+  },
+  {
+    title: "Formation Équipes",
+    text: "Vos collaborateurs apprennent à tirer le meilleur de l'IA au quotidien : prompts efficaces, intégration d'outils IA dans leurs workflows, bonnes pratiques de sécurité. Formation par la pratique, sur vos cas réels.",
+  },
+];
 ---
 
 <Layout
@@ -23,160 +77,64 @@ import CtaFinal from "../components/astro/CtaFinal.astro";
 
   <Navbar />
   <main id="main">
-    <!-- Hero services -->
-    <section style="background: #f9f9f9; padding: 120px 0 60px;">
-      <div style="max-width: 800px; margin: 0 auto; padding: 0 24px; text-align: center;">
-        <p style="font-size: 14px; font-weight: 600; color: #fa5d19; font-family: monospace; margin-bottom: 8px;">
-          // Nos services
-        </p>
-        <h1 style="font-size: 48px; font-weight: 700; color: #262626; letter-spacing: -2px; line-height: 1.1; margin: 0;">
-          Tout ce qu'il faut pour passer de l'idée au produit.
-        </h1>
-        <p style="font-size: 18px; color: #737373; margin-top: 16px; line-height: 1.6;">
+    <section class="page-hero">
+      <div class="container container--text">
+        <p class="eyebrow">// Nos services</p>
+        <h1>Tout ce qu'il faut pour passer de l'idée au produit.</h1>
+        <p class="lead">
           On conçoit, développe et déploie des solutions digitales sur mesure.
           Chaque projet est pensé pour votre métier, vos contraintes et vos ambitions.
         </p>
       </div>
     </section>
 
-    <!-- Développement sur mesure -->
-    <section id="developpement" style="background: #ffffff; padding: 80px 0;">
-      <div style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
-        <h2 style="font-size: 32px; font-weight: 700; color: #262626; letter-spacing: -1px; margin: 0 0 16px;">
-          Développement sur mesure
-        </h2>
-        <p style="font-size: 16px; color: #737373; line-height: 1.7; margin-bottom: 40px;">
-          On ne vend pas des templates. On construit des applications taillées pour votre métier,
-          avec une architecture pensée pour durer et évoluer.
-        </p>
+    <ServiceCardGrid
+      id="developpement"
+      title="Développement sur mesure"
+      intro="On ne vend pas des templates. On construit des applications taillées pour votre métier, avec une architecture pensée pour durer et évoluer."
+      cards={dev}
+      alt
+    />
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #f9f9f9;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Applications Web</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              SaaS, dashboards analytics, portails clients, back-offices. Architecture React/Next.js,
-              interfaces réactives, déploiement continu. Vos utilisateurs accèdent à un produit fiable
-              depuis n'importe quel navigateur.
-            </p>
-            <p style="margin-top: 12px; font-size: 12px; color: #a3a3a3;">React · Next.js · Astro · Supabase</p>
-          </div>
+    <ServiceCardGrid
+      id="automatisation"
+      title="Automatisation"
+      intro="On identifie les tâches répétitives qui freinent vos équipes et on les automatise. Synchronisation de données, génération de documents, alertes intelligentes, pipelines ETL. Moins de travail manuel, plus de fiabilité."
+      cards={automatisation}
+    />
 
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #f9f9f9;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Applications Mobile</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Une seule codebase, deux plateformes. Applications iOS et Android cross-platform
-              avec expérience native : notifications push, mode hors-ligne, performances fluides.
-              De l'idée au store en quelques semaines.
-            </p>
-            <p style="margin-top: 12px; font-size: 12px; color: #a3a3a3;">React Native · Expo · Flutter · Firebase</p>
-          </div>
+    <ServiceCardGrid
+      id="conseil-ia"
+      title="Conseil en Intelligence Artificielle"
+      intro="L'IA n'est pas une fin en soi — c'est un levier. On vous aide à l'intégrer là où elle crée de la valeur, pas là où elle fait joli."
+      cards={conseil}
+      alt
+    />
 
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #f9f9f9;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Bots Telegram & WhatsApp</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Transformez vos canaux de messagerie en véritables outils métier. Gestion de commandes,
-              notifications, pilotage CRM et réponses clients 24h/24 — avec ou sans IA embarquée.
-            </p>
-            <p style="margin-top: 12px; font-size: 12px; color: #a3a3a3;">Telegram · WhatsApp · LLM · Webhooks</p>
-          </div>
-
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #f9f9f9;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Sites Vitrines & E-commerce</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Sites rapides, accessibles et optimisés pour le référencement. Vitrine corporate,
-              landing pages de conversion ou boutique en ligne complète — stack adaptée à votre budget.
-            </p>
-            <p style="margin-top: 12px; font-size: 12px; color: #a3a3a3;">Astro · Shopify · Stripe · SEO · CMS</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Automatisation -->
-    <section id="automatisation" style="background: #f9f9f9; padding: 80px 0;">
-      <div style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
-        <h2 style="font-size: 32px; font-weight: 700; color: #262626; letter-spacing: -1px; margin: 0 0 16px;">
-          Automatisation
-        </h2>
-        <p style="font-size: 16px; color: #737373; line-height: 1.7; margin-bottom: 40px;">
-          On identifie les tâches répétitives qui freinent vos équipes et on les automatise.
-          Synchronisation de données, génération de documents, alertes intelligentes, pipelines ETL.
-          Moins de travail manuel, plus de fiabilité.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #ffffff;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Workflows automatisés</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Connexion de vos outils existants (CRM, ERP, Google Workspace, Notion, Slack)
-              via des pipelines sur mesure. Déclenchement par événements, planification cron,
-              ou appels API.
-            </p>
-          </div>
-
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #ffffff;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Scraping & Data pipelines</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Collecte, nettoyage et structuration de données depuis n'importe quelle source.
-              Alimentation automatique de vos bases, tableaux de bord et outils de reporting.
-            </p>
-          </div>
-
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #ffffff;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Alertes & Monitoring</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Surveillance de vos processus critiques avec notifications en temps réel.
-              Détection d'anomalies, rapports automatiques et escalade intelligente.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Conseil IA -->
-    <section id="conseil-ia" style="background: #ffffff; padding: 80px 0;">
-      <div style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
-        <h2 style="font-size: 32px; font-weight: 700; color: #262626; letter-spacing: -1px; margin: 0 0 16px;">
-          Conseil en Intelligence Artificielle
-        </h2>
-        <p style="font-size: 16px; color: #737373; line-height: 1.7; margin-bottom: 40px;">
-          L'IA n'est pas une fin en soi — c'est un levier. On vous aide à l'intégrer
-          là où elle crée de la valeur, pas là où elle fait joli.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #f9f9f9;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Audit & Stratégie IA</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Cartographie de vos processus, données et points de friction. Identification
-              des cas d'usage IA à fort ROI et construction d'une feuille de route réaliste —
-              pas de buzzwords, que du concret avec des résultats mesurables à 3 mois.
-            </p>
-          </div>
-
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #f9f9f9;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Agents IA connectés</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Déploiement d'assistants IA connectés à vos plateformes. Vos équipes gagnent
-              du temps, vos clients obtiennent des réponses instantanées — sécurisé et intégré
-              à votre écosystème existant.
-            </p>
-          </div>
-
-          <div style="border: 1px solid #ededed; border-radius: 12px; padding: 24px; background: #f9f9f9;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #262626; margin: 0 0 8px;">Formation Équipes</h3>
-            <p style="font-size: 14px; color: #737373; line-height: 1.6; margin: 0;">
-              Vos collaborateurs apprennent à tirer le meilleur de l'IA au quotidien :
-              prompts efficaces, intégration d'outils IA dans leurs workflows,
-              bonnes pratiques de sécurité. Formation par la pratique, sur vos cas réels.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
     <CtaFinal />
   </main>
   <Footer />
 </Layout>
+
+<style>
+  .page-hero {
+    background: var(--bg);
+    padding-block: var(--hero-y) var(--section-y);
+    text-align: center;
+  }
+  .eyebrow {
+    margin-bottom: var(--sp-2);
+  }
+  h1 {
+    font-size: var(--fs-4xl);
+    font-weight: 700;
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-display);
+    color: var(--text);
+  }
+  .lead {
+    margin-top: var(--sp-4);
+    font-size: var(--fs-md);
+    color: var(--text-3);
+  }
+</style>

@@ -2,6 +2,33 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
 import Footer from "../components/astro/Footer.astro";
+
+const sections = [
+  {
+    title: "Éditeur du site",
+    html: `DMY<br />Forme juridique : [à compléter]<br />Siège social : [adresse à compléter]<br />SIRET : [à compléter]<br />Téléphone : +33 6 74 30 50 67<br />Directeur de la publication : [nom à compléter]`,
+  },
+  {
+    title: "Hébergement",
+    html: `[Nom de l'hébergeur à compléter]<br />[Adresse de l'hébergeur]<br />[Téléphone de l'hébergeur]`,
+  },
+  {
+    title: "Propriété intellectuelle",
+    html: `L'ensemble du contenu de ce site (textes, images, vidéos, logos, icônes, code source) est la propriété exclusive de DMY ou de ses partenaires et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle. Toute reproduction, représentation, modification ou exploitation non autorisée est interdite.`,
+  },
+  {
+    title: "Données personnelles",
+    html: `Ce site ne collecte aucune donnée personnelle via des formulaires ou des cookies de tracking. Aucun outil d'analyse tiers n'est utilisé. Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous par téléphone au +33 6 74 30 50 67.`,
+  },
+  {
+    title: "Cookies",
+    html: `Ce site n'utilise aucun cookie publicitaire ni cookie de suivi. Seuls des cookies strictement nécessaires au fonctionnement technique du site peuvent être utilisés.`,
+  },
+  {
+    title: "Litiges",
+    html: `Le présent site est soumis au droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux français seront seuls compétents.`,
+  },
+];
 ---
 
 <Layout
@@ -10,70 +37,46 @@ import Footer from "../components/astro/Footer.astro";
   canonicalPath="/mentions-legales"
 >
   <Navbar />
-  <main id="main" style="padding: 120px 0 80px; background: #f9f9f9;">
-    <div style="max-width: 700px; margin: 0 auto; padding: 0 24px;">
-      <h1 style="font-size: 36px; font-weight: 700; color: #262626; letter-spacing: -1.5px; margin: 0 0 40px;">
-        Mentions légales
-      </h1>
-
-      <section style="margin-bottom: 32px;">
-        <h2 style="font-size: 22px; font-weight: 700; color: #262626; margin: 0 0 12px;">Éditeur du site</h2>
-        <p style="font-size: 15px; color: #737373; line-height: 1.7; margin: 0;">
-          DMY<br />
-          Forme juridique : [à compléter]<br />
-          Siège social : [adresse à compléter]<br />
-          SIRET : [à compléter]<br />
-          Téléphone : +33 6 74 30 50 67<br />
-          Directeur de la publication : [nom à compléter]
-        </p>
-      </section>
-
-      <section style="margin-bottom: 32px;">
-        <h2 style="font-size: 22px; font-weight: 700; color: #262626; margin: 0 0 12px;">Hébergement</h2>
-        <p style="font-size: 15px; color: #737373; line-height: 1.7; margin: 0;">
-          [Nom de l'hébergeur à compléter]<br />
-          [Adresse de l'hébergeur]<br />
-          [Téléphone de l'hébergeur]
-        </p>
-      </section>
-
-      <section style="margin-bottom: 32px;">
-        <h2 style="font-size: 22px; font-weight: 700; color: #262626; margin: 0 0 12px;">Propriété intellectuelle</h2>
-        <p style="font-size: 15px; color: #737373; line-height: 1.7; margin: 0;">
-          L'ensemble du contenu de ce site (textes, images, vidéos, logos, icônes, code source)
-          est la propriété exclusive de DMY ou de ses partenaires et est protégé par les lois
-          françaises et internationales relatives à la propriété intellectuelle. Toute reproduction,
-          représentation, modification ou exploitation non autorisée est interdite.
-        </p>
-      </section>
-
-      <section style="margin-bottom: 32px;">
-        <h2 style="font-size: 22px; font-weight: 700; color: #262626; margin: 0 0 12px;">Données personnelles</h2>
-        <p style="font-size: 15px; color: #737373; line-height: 1.7; margin: 0;">
-          Ce site ne collecte aucune donnée personnelle via des formulaires ou des cookies de tracking.
-          Aucun outil d'analyse tiers n'est utilisé. Conformément au Règlement Général sur la
-          Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de
-          suppression de vos données. Pour exercer ces droits, contactez-nous par téléphone
-          au +33 6 74 30 50 67.
-        </p>
-      </section>
-
-      <section style="margin-bottom: 32px;">
-        <h2 style="font-size: 22px; font-weight: 700; color: #262626; margin: 0 0 12px;">Cookies</h2>
-        <p style="font-size: 15px; color: #737373; line-height: 1.7; margin: 0;">
-          Ce site n'utilise aucun cookie publicitaire ni cookie de suivi. Seuls des cookies
-          strictement nécessaires au fonctionnement technique du site peuvent être utilisés.
-        </p>
-      </section>
-
-      <section>
-        <h2 style="font-size: 22px; font-weight: 700; color: #262626; margin: 0 0 12px;">Litiges</h2>
-        <p style="font-size: 15px; color: #737373; line-height: 1.7; margin: 0;">
-          Le présent site est soumis au droit français. En cas de litige, et après tentative
-          de résolution amiable, les tribunaux français seront seuls compétents.
-        </p>
-      </section>
+  <main id="main" class="legal">
+    <div class="container container--prose">
+      <h1>Mentions légales</h1>
+      {sections.map((section) => (
+        <section>
+          <h2>{section.title}</h2>
+          <p set:html={section.html} />
+        </section>
+      ))}
     </div>
   </main>
   <Footer />
 </Layout>
+
+<style>
+  .legal {
+    background: var(--bg);
+    padding-block: var(--hero-y) var(--section-y);
+  }
+  h1 {
+    margin-bottom: var(--sp-7);
+    font-size: var(--fs-3xl);
+    font-weight: 700;
+    letter-spacing: var(--ls-title);
+    color: var(--text);
+  }
+  section + section,
+  h1 + section {
+    margin-top: var(--sp-6);
+  }
+  h2 {
+    margin-bottom: var(--sp-3);
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    letter-spacing: var(--ls-title);
+    color: var(--text);
+  }
+  p {
+    font-size: var(--fs-base);
+    color: var(--text-2);
+    line-height: var(--lh-loose);
+  }
+</style>
