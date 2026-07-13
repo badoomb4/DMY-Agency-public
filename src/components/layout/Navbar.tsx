@@ -54,7 +54,7 @@ export function Navbar() {
           <Group gap="sm">
             <Button
               component="a"
-              href="#contact"
+              href="/#contact"
               variant="subtle"
               color="gray"
               c="#262626"
@@ -66,7 +66,7 @@ export function Navbar() {
             </Button>
             <Button
               component="a"
-              href="#contact"
+              href="/#contact"
               color="#262626"
               size="sm"
               radius="md"
