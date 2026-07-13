@@ -11,22 +11,23 @@ const stats = [
 <section id="hero" class="hero">
   <Vortex client:idle />
   <div class="container hero-inner">
-    <p class="hero-badge fade-in">
+    <p class="hero-badge fade-in" style="--fade-delay: 100ms">
       <span aria-hidden="true">🚀</span>
       Services informatiques vitaminés à l'IA
     </p>
-    <h1 class="fade-in" style="--fade-delay: 100ms">
+    <!-- Le H1 (élément LCP) démarre sans délai. -->
+    <h1 class="fade-in">
       On transforme vos idées en produits qui <em>marchent</em>.
     </h1>
-    <p class="hero-sub fade-in" style="--fade-delay: 200ms">
+    <p class="hero-sub fade-in" style="--fade-delay: 180ms">
       Développement sur mesure et conseil en intelligence artificielle
       pour les entreprises qui veulent une longueur d'avance.
     </p>
-    <div class="hero-cta fade-in" style="--fade-delay: 300ms">
+    <div class="hero-cta fade-in" style="--fade-delay: 260ms">
       <a class="btn btn--dark btn--lg" href="#contact">Démarrer un projet →</a>
       <a class="btn btn--outline btn--lg" href="#services">Voir nos services</a>
     </div>
-    <ul class="hero-stats fade-in" style="--fade-delay: 400ms" role="list">
+    <ul class="hero-stats fade-in" style="--fade-delay: 340ms" role="list">
       {stats.map((stat) => (
         <li>
           <span class="stat-value">{stat.value}</span>

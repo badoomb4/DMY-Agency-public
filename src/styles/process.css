@@ -64,6 +64,11 @@
   user-select: none;
   pointer-events: none;
 }
+/* Numéro décoratif en pseudo-élément : filigrane volontairement très pâle
+   (exemption WCAG « pure décoration »). */
+.step-card__ghost::before {
+  content: attr(data-n);
+}
 .step-card__icon {
   display: flex;
   align-items: center;

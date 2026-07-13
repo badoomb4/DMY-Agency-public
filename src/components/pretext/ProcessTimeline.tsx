@@ -22,13 +22,11 @@ export function ProcessTimeline({ activeKey, steps }: Props) {
           className="step-card fade-in"
           style={{ "--fade-delay": `${i * 100}ms` } as CSSProperties}
         >
-          <span className="step-card__ghost" aria-hidden="true">
-            {step.number}
-          </span>
+          <span className="step-card__ghost" aria-hidden="true" data-n={step.number} />
           <span className="step-card__icon" aria-hidden="true">
             {step.icon}
           </span>
-          <h4 className="step-card__title">{step.title}</h4>
+          <h3 className="step-card__title">{step.title}</h3>
           <p className="step-card__desc">{step.description}</p>
           <ProcessStepDetail actions={step.actions} livrables={step.livrables} />
         </div>

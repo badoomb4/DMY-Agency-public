@@ -151,7 +151,7 @@ export function BotChat() {
           }}>
             <div style={{
               flex: 1, background: "#f0f0f0", borderRadius: 12,
-              padding: "5px 10px", fontSize: 10, color: "#999",
+              padding: "5px 10px", fontSize: 10, color: "var(--text-2)",
             }}>Message...</div>
             <div style={{
               width: 22, height: 22, borderRadius: "50%", background: platform.color,

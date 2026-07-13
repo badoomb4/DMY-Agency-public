@@ -12,7 +12,7 @@
   --ink: #171717;
   --text: #262626;
   --text-2: #525252;
-  --text-3: #737373; /* minimum AA sur --bg : jamais plus clair en texte */
+  --text-3: #6e6e6e; /* 4.8:1 sur --bg (AA avec marge) : jamais plus clair en texte */
   --border: #ededed;
   --border-strong: #d4d4d4;
   --surface: #ffffff;
